@@ -1,0 +1,35 @@
+.form {}
+
+.compact {}
+
+.gdpr {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.successIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-weight: 700;
+  color: rgb(34, 197, 94);
+  margin-bottom: 2px;
+}
+
+.successText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,15 @@
+# Taras Andrusyshyn - AI & Growth Marketing Blog
+
+This website is the personal authority hub of Taras Andrusyshyn. Taras is a marketer and AI developer focused on demonstrating how one person, strictly armed with the exact AI tools, can replace an entire team and produce high-end results.
+
+Main topics discussed on this blog:
+- AI tools & practical implementations for businesses
+- Growth marketing strategies & paid traffic
+- Automation & Content Strategy
+
+## Important Links
+- About the author: https://andrusyshyn.vercel.app/about
+- Latest Articles via RSS (UA): https://andrusyshyn.vercel.app/feed.xml
+- Latest Articles via RSS (EN): https://andrusyshyn.vercel.app/en/feed.xml
+- Newsletter & Telegram community: https://t.me/lab_of_autonomy
+- All articles index (Sitemap): https://andrusyshyn.vercel.app/sitemap.xml

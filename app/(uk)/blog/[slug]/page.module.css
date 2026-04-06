@@ -1,0 +1,235 @@
+.article {
+  padding-bottom: var(--space-8);
+}
+
+/* Header */
+.header {
+  padding: var(--space-6) 0 var(--space-5);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span:first-of-type { color: var(--text-muted); }
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.excerpt {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.authorAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.authorName {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.readTime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Featured image */
+.featuredImage {
+  margin-top: var(--space-5);
+}
+
+.featuredImage img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  max-height: 500px;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Content */
+.content {
+  margin: 0 auto var(--space-5);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Share */
+.share {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.shareBtn {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+  background: var(--bg-card);
+}
+
+.shareBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+/* Author box */
+.authorBox {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+}
+
+.authorBoxAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-accent);
+}
+
+.authorBox h4 {
+  margin-bottom: 6px;
+}
+
+.authorBox p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.authorLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.authorLink:hover { color: var(--accent-hover); }
+
+/* Newsletter box */
+.newsletterBox {
+  padding: var(--space-4) var(--space-5);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(124, 106, 255, 0.25);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.newsletterBox h3 { margin-bottom: 8px; }
+.newsletterBox p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-3);
+}
+
+/* Related */
+.related {
+  padding: var(--space-7) 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-6);
+}
+
+.related h2 {
+  margin-bottom: var(--space-4);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .relatedGrid { grid-template-columns: 1fr; }
+  .authorBox { flex-direction: column; }
+  .share { flex-wrap: wrap; }
+  .meta { flex-direction: column; align-items: flex-start; }
+}
