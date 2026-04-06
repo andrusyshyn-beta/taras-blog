@@ -27,15 +27,6 @@ const tools = [
     rating: '★★★★★',
     link: 'https://www.jasper.ai/',
     cta: 'Зареєструватись'
-  },
-  {
-    id: 'telegram',
-    name: 'Lab of Autonomy',
-    category: 'Community',
-    description: 'Моя спільнота в Telegram, де я ділюся кейсами автоматизації, які не потрапляють у відкритий блог.',
-    rating: '★★★★★',
-    link: 'https://t.me/lab_of_autonomy',
-    cta: 'Приєднатись'
   }
 ];
 
