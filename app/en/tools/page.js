@@ -25,8 +25,8 @@ const tools = [
     category: 'AI Coding Agent',
     description: 'An intelligent agent that helps me write this blog, debug code, and implement AI solutions in hours.',
     rating: '★★★★★',
-    link: '#',
-    cta: 'How it works?'
+    link: 'https://gemini.google.com/',
+    cta: 'Try AI'
   },
   {
     id: 'elevenlabs',

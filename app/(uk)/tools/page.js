@@ -25,8 +25,8 @@ const tools = [
     category: 'AI Coding Agent',
     description: 'Інтелектуальний агент, який допомагає мені писати цей блог, дебажити код та впроваджувати AI-рішення за лічені години.',
     rating: '★★★★★',
-    link: '#',
-    cta: 'Як це працює?'
+    link: 'https://gemini.google.com/',
+    cta: 'Спробувати AI'
   },
   {
     id: 'elevenlabs',

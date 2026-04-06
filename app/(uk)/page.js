@@ -130,6 +130,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== MY STACK ===== */}
+      <section className={styles.section}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionLabel}>Стек</span>
+            <h2>Інструменти моєї роботи</h2>
+            <Link href="/tools" className={styles.seeAll}>Усі інструменти →</Link>
+          </div>
+          <div className={styles.stackGrid}>
+            <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
+              <div className={styles.stackIcon}>n8n</div>
+              <div className={styles.stackContent}>
+                <h3>n8n Cloud</h3>
+                <p>Автоматизація AI воркфлоу</p>
+              </div>
+            </a>
+            <a href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
+              <div className={styles.stackIcon}>Eleven</div>
+              <div className={styles.stackContent}>
+                <h3>ElevenLabs</h3>
+                <p>Генерація AI голосу</p>
+              </div>
+            </a>
+            <a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
+              <div className={styles.stackIcon}>HeyGen</div>
+              <div className={styles.stackContent}>
+                <h3>HeyGen</h3>
+                <p>AI відео-аватари</p>
+              </div>
+            </a>
+            <a href="https://www.hostinger.com/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
+              <div className={styles.stackIcon}>Host</div>
+              <div className={styles.stackContent}>
+                <h3>Hostinger</h3>
+                <p>Надійний хостинг</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ===== ABOUT SNIPPET ===== */}
       <section className={styles.aboutSection}>
         <div className="container">
