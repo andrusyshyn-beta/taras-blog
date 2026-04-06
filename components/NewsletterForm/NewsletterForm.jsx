@@ -10,7 +10,7 @@ export default function NewsletterForm({ compact = false }) {
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn--primary"
-          style={{ width: '100%', justifyContent: 'center', maxWidth: compact ? '250px' : '300px' }}
+          style={{ width: '100%' }}
         >
           Підписатись на Telegram 🚀
         </a>
