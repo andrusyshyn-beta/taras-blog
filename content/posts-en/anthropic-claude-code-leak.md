@@ -6,7 +6,6 @@ category: "AI"
 tags: ["Anthropic", "Claude Code", "AI Leak", "Cybersecurity"]
 excerpt: "Accidental leak of 512,000 lines of code for $2.5B in revenue: how the 'safe' AI company Anthropic made a rookie mistake and what it changes ahead of their IPO."
 readingTime: 4
-image: "/images/blog/anthropic-leak.png"
 ---
 
 5 days ago, Anthropic leaked the source code for Claude Code. Accidentally. 512,000 lines. The complete internal architecture of a product worth $2.5 billion in annual revenue was simply sitting in public access.

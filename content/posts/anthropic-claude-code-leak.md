@@ -6,7 +6,6 @@ category: "AI"
 tags: ["Anthropic", "Claude Code", "AI Leak", "Cybersecurity"]
 excerpt: "Випадковий злив 512,000 рядків коду за $2.5 млрд доходу: як безпечна AI-компанія Anthropic припустилася дитячої помилки і що це змінить перед IPO."
 readingTime: 4
-image: "/images/blog/anthropic-leak.png"
 ---
 
 5 днів тому Anthropic злила вихідний код Claude Code. Випадково. 512,000 рядків. Повна внутрішня архітектура продукту на $2.5 мільярди річного доходу — просто лежала у відкритому доступі.
