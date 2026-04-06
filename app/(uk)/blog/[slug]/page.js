@@ -51,9 +51,9 @@ export default async function ArticlePage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Блог', item: 'https://andrusyshyn.vercel.app/blog' },
-      { '@type': 'ListItem', position: 2, name: post.category, item: `https://andrusyshyn.vercel.app/blog?category=${encodeURIComponent(post.category)}` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://andrusyshyn.vercel.app/blog/${post.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Блог', item: 'https://taras-blog.vercel.app/blog' },
+      { '@type': 'ListItem', position: 2, name: post.category, item: `https://taras-blog.vercel.app/blog?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://taras-blog.vercel.app/blog/${post.slug}` },
     ],
   };
 
@@ -132,7 +132,7 @@ export default async function ArticlePage({ params }) {
           <div className={styles.share}>
             <span>Поділитись:</span>
             <a
-              href={`https://t.me/share/url?url=https://andrusyshyn.vercel.app/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
+              href={`https://t.me/share/url?url=https://taras-blog.vercel.app/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareBtn}
@@ -140,7 +140,7 @@ export default async function ArticlePage({ params }) {
               Telegram
             </a>
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://andrusyshyn.vercel.app/blog/${post.slug}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://taras-blog.vercel.app/blog/${post.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareBtn}

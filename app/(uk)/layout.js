@@ -10,7 +10,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  metadataBase: new URL('https://andrusyshyn.vercel.app'),
+  metadataBase: new URL('https://taras-blog.vercel.app'),
   title: {
     default: 'Taras Andrusyshyn — Технології та маркетинг',
     template: '%s | Taras Andrusyshyn',
@@ -37,11 +37,14 @@ export const metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://andrusyshyn.vercel.app',
+    canonical: 'https://taras-blog.vercel.app',
     languages: {
-      'uk-UA': 'https://andrusyshyn.vercel.app',
-      'en-US': 'https://andrusyshyn.vercel.app/en',
+      'uk-UA': 'https://taras-blog.vercel.app',
+      'en-US': 'https://taras-blog.vercel.app/en',
     },
+  },
+  verification: {
+    google: 'lGPQT7--F0japn09VxowjaZqN2bC00NZHnAHu29D6S4',
   },
 };
 
@@ -65,9 +68,9 @@ export default function RootLayout({ children }) {
           rel="alternate"
           type="application/rss+xml"
           title="Taras Andrusyshyn | Блог (RSS)"
-          href="https://andrusyshyn.vercel.app/feed.xml"
+          href="https://taras-blog.vercel.app/feed.xml"
         />
-        <link rel="llms-txt" href="https://andrusyshyn.vercel.app/llms.txt" />
+        <link rel="llms-txt" href="https://taras-blog.vercel.app/llms.txt" />
       </head>
       <body>
         <ThemeProvider>
@@ -82,7 +85,7 @@ export default function RootLayout({ children }) {
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Taras Andrusyshyn',
-              url: 'https://andrusyshyn.vercel.app',
+              url: 'https://taras-blog.vercel.app',
               jobTitle: 'AI Developer & Growth Marketer',
               sameAs: [
                 'https://www.facebook.com/andrusyshyn.ts',
@@ -95,7 +98,7 @@ export default function RootLayout({ children }) {
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: 'Taras Andrusyshyn Blog',
-              url: 'https://andrusyshyn.vercel.app/'
+              url: 'https://taras-blog.vercel.app/'
             }])
           }}
         />
@@ -103,3 +106,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

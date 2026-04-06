@@ -2,7 +2,7 @@ import { getAllPosts } from '@/lib/posts';
 
 export async function GET() {
   const posts = getAllPosts();
-  const site_url = 'https://andrusyshyn.vercel.app';
+  const site_url = 'https://taras-blog.vercel.app';
 
   const feedItems = posts.map((post) => {
     return `
@@ -34,3 +34,4 @@ export async function GET() {
     },
   });
 }
+

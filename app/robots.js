@@ -4,6 +4,7 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://andrusyshyn.vercel.app/sitemap.xml',
+    sitemap: 'https://taras-blog.vercel.app/sitemap.xml',
   };
 }
+

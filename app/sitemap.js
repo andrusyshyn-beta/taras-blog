@@ -2,7 +2,7 @@ import { getAllPosts as getUkPosts } from '@/lib/posts';
 import { getAllPosts as getEnPosts } from '@/lib/posts-en';
 
 export default function sitemap() {
-  const baseUrl = 'https://andrusyshyn.vercel.app';
+  const baseUrl = 'https://taras-blog.vercel.app';
   const ukPosts = getUkPosts();
   const enPosts = getEnPosts();
 
@@ -46,3 +46,4 @@ export default function sitemap() {
 
   return [...ukUrls, ...enUrls, ...ukBlogUrls, ...enBlogUrls];
 }
+

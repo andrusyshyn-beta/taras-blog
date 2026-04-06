@@ -51,9 +51,9 @@ export default async function ArticlePage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Blog', item: 'https://andrusyshyn.vercel.app/en/blog' },
-      { '@type': 'ListItem', position: 2, name: post.category, item: `https://andrusyshyn.vercel.app/en/blog?category=${encodeURIComponent(post.category)}` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://andrusyshyn.vercel.app/en/blog/${post.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Blog', item: 'https://taras-blog.vercel.app/en/blog' },
+      { '@type': 'ListItem', position: 2, name: post.category, item: `https://taras-blog.vercel.app/en/blog?category=${encodeURIComponent(post.category)}` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://taras-blog.vercel.app/en/blog/${post.slug}` },
     ],
   };
 

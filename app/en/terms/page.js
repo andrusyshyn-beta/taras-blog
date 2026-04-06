@@ -13,7 +13,7 @@ export default function TermsPage() {
         <p><em>Last updated: March 2026</em></p>
         
         <h2>1. Terms of Content Use</h2>
-        <p>All materials (articles, guides, instructions) posted on this site are copyrighted. You can use them for non-commercial purposes, provided you include an active (clickable) link to the original material page at <a href="https://andrusyshyn.vercel.app">andrusyshyn.vercel.app</a>.</p>
+        <p>All materials (articles, guides, instructions) posted on this site are copyrighted. You can use them for non-commercial purposes, provided you include an active (clickable) link to the original material page at <a href="https://taras-blog.vercel.app">taras-blog.vercel.app</a>.</p>
         
         <h2>2. Disclaimer</h2>
         <p>The content on the site is provided "as is". The author is not responsible for any financial loss, damage, or inability to get the desired result when implementing the described marketing or AI strategies into your business. You use any tools at your own risk.</p>
@@ -30,3 +30,4 @@ export default function TermsPage() {
     </div>
   );
 }
+
