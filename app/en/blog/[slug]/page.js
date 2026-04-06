@@ -86,7 +86,9 @@ export default async function ArticlePage({ params }) {
             {/* Meta */}
             <div className={styles.meta}>
               <div className={styles.author}>
-                <div className={styles.authorAvatar}>TA</div>
+                <div className={styles.authorAvatar}>
+                  <img src="/images/taras-photo.jpg" alt="Taras Andrusyshyn" />
+                </div>
                 <div>
                   <span className={styles.authorName}>Taras Andrusyshyn</span>
                   <span className={styles.date}>{formatDate(post.date)}</span>
@@ -151,7 +153,9 @@ export default async function ArticlePage({ params }) {
 
           {/* Author box */}
           <div className={styles.authorBox}>
-            <div className={styles.authorBoxAvatar}>TA</div>
+            <div className={styles.authorBoxAvatar}>
+              <img src="/images/taras-photo.jpg" alt="Taras Andrusyshyn" />
+            </div>
             <div>
               <h4>Taras Andrusyshyn</h4>
               <p>I study AI, write about tech and marketing. Practical content without fluff.</p>
