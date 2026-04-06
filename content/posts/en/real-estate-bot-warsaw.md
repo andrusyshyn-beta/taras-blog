@@ -34,8 +34,6 @@ Instead of building a complex backend on Python or Node.js, I used a **\"No-Code
 3. **Buffering:** New listings are saved in **Google Sheets**. This is our \"buffer\" that prevents publishing the same notification twice.
 4. **Notifications:** If a listing passes all filters, it’s instantly sent to a private Telegram channel for the agency or to my personal chat.
 
-![Screenshot of the bot workflow in n8n](/images/blog/n8n-real-estate-bot.png)
-
 ---
 
 ## 2. Why This Specific Stack?
