@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/blog', label: 'Блог' },
   { href: '/about', label: 'Про мене' },
   { href: '/services', label: 'Послуги' },
+  { href: '/tools', label: 'Інструменти' },
   { href: '/newsletter', label: 'Newsletter' },
 ];
 
