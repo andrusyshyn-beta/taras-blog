@@ -2,31 +2,67 @@ import styles from './page.module.css';
 
 const tools = [
   {
+    id: 'n8n',
+    name: 'n8n (Cloud)',
+    category: 'Automation',
+    description: 'Мій №1 інструмент для побудови складних AI-агентів. Дозволяє візуально створювати воркфлоу, які обробляють тисячі запитів без вашої участі.',
+    rating: '★★★★★',
+    link: 'https://n8n.io/',
+    cta: 'Запустити автоматизацію'
+  },
+  {
+    id: 'make',
+    name: 'Make.com',
+    category: 'Automation',
+    description: 'Найзручніший сервіс для зв\'язки сотень додатків без коду. Ідеально підходить для маркетингових воронок та збору даних.',
+    rating: '★★★★★',
+    link: 'https://www.make.com/',
+    cta: 'Спробувати Make'
+  },
+  {
+    id: 'antigravity',
+    name: 'Antigravity AI',
+    category: 'AI Coding Agent',
+    description: 'Інтелектуальний агент, який допомагає мені писати цей блог, дебажити код та впроваджувати AI-рішення за лічені години.',
+    rating: '★★★★★',
+    link: '#',
+    cta: 'Як це працює?'
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    category: 'AI Voice',
+    description: 'Найбільш реалістична генерація голосу. Використовую для озвучування статей та створення контенту, який неможливо відрізнити від людини.',
+    rating: '★★★★★',
+    link: 'https://elevenlabs.io/',
+    cta: 'Озвучити текст'
+  },
+  {
+    id: 'heygen',
+    name: 'HeyGen',
+    category: 'AI Video',
+    description: 'Революція у відео-маркетингу. Створюю AI-аватарів, які говорять моїм голосом і генерують відео-контент 24/7.',
+    rating: '★★★★★',
+    link: 'https://www.heygen.com/',
+    cta: 'Створити аватара'
+  },
+  {
+    id: 'hostinger',
+    name: 'Hostinger',
+    category: 'Web Hosting',
+    description: 'Де я хощу свої проекти та self-hosted інструменти. Швидко, надійно та за адекватну ціну для розробників.',
+    rating: '★★★★★',
+    link: 'https://www.hostinger.com/',
+    cta: 'Отримати хостинг'
+  },
+  {
     id: 'claude',
     name: 'Claude AI',
     category: 'AI Assistant',
-    description: 'Мій основний інструмент для написання коду та аналізу даних. Найбільш "людяний" та розумний ШІ на ринку сьогодні.',
+    description: 'Мій основний інструмент для написання коду та аналізу даних. Найбільш інтелектуальний ШІ на сьогодні.',
     rating: '★★★★★',
     link: 'https://claude.ai/',
     cta: 'Спробувати Claude'
-  },
-  {
-    id: 'perplexity',
-    name: 'Perplexity AI',
-    category: 'Search & Research',
-    description: 'Забудьте про Google. Цей сервіс видає готові відповіді з посиланнями на джерела. Економить години пошуку.',
-    rating: '★★★★★',
-    link: 'https://www.perplexity.ai/',
-    cta: 'Відкрити Perplexity'
-  },
-  {
-    id: 'jasper',
-    name: 'Jasper AI',
-    category: 'Content Marketing',
-    description: 'Найкращий інструмент для масштабування маркетингу. Генерація SEO-текстів, оголошень та листів з вашим Tone of Voice.',
-    rating: '★★★★★',
-    link: 'https://www.jasper.ai/',
-    cta: 'Зареєструватись'
   }
 ];
 

@@ -2,6 +2,60 @@ import styles from './page.module.css';
 
 const tools = [
   {
+    id: 'n8n',
+    name: 'n8n (Cloud)',
+    category: 'Automation',
+    description: 'My #1 tool for building complex AI agents. Visually design workflows that handle thousands of requests autonomously.',
+    rating: '★★★★★',
+    link: 'https://n8n.io/',
+    cta: 'Start Automating'
+  },
+  {
+    id: 'make',
+    name: 'Make.com',
+    category: 'Automation',
+    description: 'The easiest way to connect hundreds of apps without code. Perfect for marketing funnels and data collection.',
+    rating: '★★★★★',
+    link: 'https://www.make.com/',
+    cta: 'Try Make'
+  },
+  {
+    id: 'antigravity',
+    name: 'Antigravity AI',
+    category: 'AI Coding Agent',
+    description: 'An intelligent agent that helps me write this blog, debug code, and implement AI solutions in hours.',
+    rating: '★★★★★',
+    link: '#',
+    cta: 'How it works?'
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    category: 'AI Voice',
+    description: 'The most realistic AI voice generator. Used for narrating articles and creating human-like digital content.',
+    rating: '★★★★★',
+    link: 'https://elevenlabs.io/',
+    cta: 'Voice Over'
+  },
+  {
+    id: 'heygen',
+    name: 'HeyGen',
+    category: 'AI Video',
+    description: 'A revolution in video marketing. I use it to create AI avatars that speak in my voice and generate content 24/7.',
+    rating: '★★★★★',
+    link: 'https://www.heygen.com/',
+    cta: 'Create Avatar'
+  },
+  {
+    id: 'hostinger',
+    name: 'Hostinger',
+    category: 'Web Hosting',
+    description: 'Where I host my projects and self-hosted tools. Fast, reliable, and fairly priced for developers.',
+    rating: '★★★★★',
+    link: 'https://www.hostinger.com/',
+    cta: 'Get Hosting'
+  },
+  {
     id: 'claude',
     name: 'Claude AI',
     category: 'AI Assistant',
@@ -9,24 +63,6 @@ const tools = [
     rating: '★★★★★',
     link: 'https://claude.ai/',
     cta: 'Try Claude'
-  },
-  {
-    id: 'perplexity',
-    name: 'Perplexity AI',
-    category: 'Search & Research',
-    description: 'Stop using Google. This service gives direct answers with source links. Saves hours of search time.',
-    rating: '★★★★★',
-    link: 'https://www.perplexity.ai/',
-    cta: 'Open Perplexity'
-  },
-  {
-    id: 'jasper',
-    name: 'Jasper AI',
-    category: 'Content Marketing',
-    description: 'The best tool for scaling marketing efforts. Generate SEO copy, ads, and emails with your brand voice.',
-    rating: '★★★★★',
-    link: 'https://www.jasper.ai/',
-    cta: 'Sign Up'
   }
 ];
 
