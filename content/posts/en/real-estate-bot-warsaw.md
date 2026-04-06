@@ -5,7 +5,7 @@ excerpt: "A case study in automation on the Warsaw real estate market: how to bu
 category: "AI & Development"
 tags: ["n8n", "AI agents", "automation", "real estate", "Warsaw", "Google Sheets"]
 featured: true
-image: ""
+image: "/images/blog/n8n-real-estate-bot.png"
 ---
 
 ## TL;DR: Key Takeaways in 30 Seconds
