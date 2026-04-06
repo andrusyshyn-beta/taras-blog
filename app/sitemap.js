@@ -28,6 +28,7 @@ export default function sitemap() {
     '/privacy',
     '/terms',
     '/services',
+    '/tools',
   ];
 
   const ukUrls = staticPages.map((page) => ({
