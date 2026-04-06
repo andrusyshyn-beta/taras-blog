@@ -264,13 +264,15 @@
 
 .emptyState {
   text-align: center;
-  padding: var(--space-7) 0;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
   color: var(--text-muted);
 }
 
 /* ===== ABOUT ===== */
 .aboutSection {
-  padding: var(--space-7) 0;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
   background: transparent;
 }
 
@@ -331,7 +333,8 @@
 /* ===== NEWSLETTER ===== */
 .newsletterSection {
   background: transparent;
-  padding: var(--space-7) 0;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
 }
 
 .newsletterInner {
