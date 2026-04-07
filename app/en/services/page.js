@@ -17,25 +17,25 @@ export default function ServicesPage() {
           </p>
         </div>
         
-        <h2>Who is this for?</h2>
+        <h2>Who can I help?</h2>
         <ul>
-          <li><strong>Solo Entrepreneurs</strong> who want to get rid of routine and offload 80% of operations to AI agents.</li>
-          <li><strong>Product Owners</strong> looking to scale marketing without bloating the staff or managing people.</li>
-          <li><strong>Agencies</strong> that need to increase profitability through automated content and SEO.</li>
+          <li><strong>Traditional Business Owners</strong> who want to radically cut costs and boost team productivity using AI agents.</li>
+          <li><strong>Experts & Professionals</strong> who dream of leaving employment to build their own autonomous solo business using my "Blueprint."</li>
+          <li><strong>Early-stage Startups</strong> who want to lay an AI-first architecture from day one, avoiding team bloating.</li>
         </ul>
 
-        <h2>Key Services</h2>
+        <h2>Collaboration Formats</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-3)', marginTop: 'var(--space-4)' }}>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Building AI Departments</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Corporate AI Optimization</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              Replacing functions of copywriters, support managers, and analysts with complex workflows in n8n/Make. You get "employees" who work 24/7 without a salary.
+              I audit your company and implement systems that take over the work of entire departments. It is not just "help"; it is replacing routine with algorithms.
             </p>
           </div>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Autonomous SEO & Content</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Solo Empire Launchpad</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              Creating systems that independently analyze the market, generate SEO clusters, and publish content. Organic growth without human involvement.
+              I help high-level specialists leave employment and become autonomous units. I provide a step-by-step plan: from personal branding to an AI stack that works for you.
             </p>
           </div>
         </div>
