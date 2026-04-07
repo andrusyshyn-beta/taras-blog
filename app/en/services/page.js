@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Services & Consulting',
-  description: 'Personal consulting on AI implementation, content strategy, and growth marketing.',
+  title: 'Services - Build Your Autonomous AI Business | Taras Andrusyshyn',
+  description: 'Helping solo entrepreneurs implement automation and AI agents to scale without hiring workers.',
 };
 
 export default function ServicesPage() {
@@ -10,42 +10,42 @@ export default function ServicesPage() {
     <div className="container--narrow" style={{ paddingTop: 'var(--space-7)', paddingBottom: 'var(--space-7)' }}>
       <div className="prose">
         <div style={{ textAlign: 'center', marginBottom: 'var(--space-5)' }}>
-          <span className="tag" style={{ marginBottom: '10px', display: 'inline-block' }}>Collaboration</span>
-          <h1 style={{ marginTop: 0, marginBottom: 'var(--space-2)' }}>Consulting & AI Coaching</h1>
+          <span className="tag" style={{ marginBottom: '10px', display: 'inline-block' }}>Expertise</span>
+          <h1 style={{ marginTop: 0, marginBottom: 'var(--space-2)' }}>Scale Business, <span className="text-accent">Not Your Team</span></h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)' }}>
-            I help founders and marketers implement AI tools to systemize processes and increase revenue.
+            I help founders transform traditional businesses into autonomous AI-first models. Complete marketing and development automation.
           </p>
         </div>
         
         <h2>Who is this for?</h2>
         <ul>
-          <li><strong>Business Owners</strong> who want to optimize content creation costs and automate departmental routines.</li>
-          <li><strong>Marketers</strong> who need to increase their productivity by 3-5x using a modern AI tech stack.</li>
-          <li><strong>Experts</strong> who must build a systematic SEO and content strategy for steady organic client acquisition.</li>
+          <li><strong>Solo Entrepreneurs</strong> who want to get rid of routine and offload 80% of operations to AI agents.</li>
+          <li><strong>Product Owners</strong> looking to scale marketing without bloating the staff or managing people.</li>
+          <li><strong>Agencies</strong> that need to increase profitability through automated content and SEO.</li>
         </ul>
 
-        <h2>What problems do I solve?</h2>
+        <h2>Key Services</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-3)', marginTop: 'var(--space-4)' }}>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>AI Implementation into Workflows</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Building AI Departments</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              I audit your current workflow and help set up an ecosystem (Claude, Perplexity, Make) that takes off more than half of routine operations.
+              Replacing functions of copywriters, support managers, and analysts with complex workflows in n8n/Make. You get "employees" who work 24/7 without a salary.
             </p>
           </div>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Content Strategy & SEO</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Autonomous SEO & Content</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              I develop a step-by-step structure for content clusters to generate organic traffic. We analyze how to make content that actually sells.
+              Creating systems that independently analyze the market, generate SEO clusters, and publish content. Organic growth without human involvement.
             </p>
           </div>
         </div>
 
-        <h2 style={{ marginTop: 'var(--space-6)' }}>What you will get?</h2>
+        <h2 style={{ marginTop: 'var(--space-6)' }}>What will you get?</h2>
         <ul>
-          <li>An individual roadmap for adopting innovations into your business.</li>
+          <li>A personalized roadmap for implementing innovations into your business.</li>
           <li>Ready-made tested templates (prompts) for ChatGPT/Claude tailored to your niche.</li>
-          <li>Deep audit of your current marketing and identification of bottlenecks where you are losing money.</li>
-          <li>A clear algorithm for cutting marketing costs without losing quality.</li>
+          <li>A deep audit of current marketing to find bottlenecks where you are losing money.</li>
+          <li>A clear algorithm for cutting marketing costs without sacrificing quality.</li>
         </ul>
 
         <hr style={{ margin: 'var(--space-6) 0' }} />
@@ -53,7 +53,7 @@ export default function ServicesPage() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'var(--bg-secondary)', padding: 'var(--space-6)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)' }}>
           <h3 style={{ marginTop: 0, fontSize: '1.8rem' }}>Let's work together</h3>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', maxWidth: '600px' }}>
-            Drop me a private message on Telegram. Briefly tell me about yourself and your project, and we will discuss collaboration options with no strings attached.
+            Drop me a DM on Telegram. Briefly tell me about your project, and we will discuss collaboration options with no obligations.
           </p>
           <a
             href="https://t.me/tsand07"

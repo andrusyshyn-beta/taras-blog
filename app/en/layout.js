@@ -12,21 +12,21 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://taras-blog.vercel.app'),
   title: {
-    default: 'Taras Andrusyshyn — Tech & Marketing',
+    default: 'Taras Andrusyshyn — Autonomous Business / AI',
     template: '%s | Taras Andrusyshyn',
   },
   description:
-    'Blog about AI, tech, and marketing. Practical content without fluff: tools, strategies, and case studies.',
-  keywords: ['tech', 'marketing', 'digital', 'blog', 'Taras Andrusyshyn'],
+    'Autonomous business architecture in the AI era. Case studies, automation, and growth strategies where 80% of processes are handled by AI agents.',
+  keywords: ['AI', 'automation', 'solopreneurship', 'blog', 'Taras Andrusyshyn'],
   authors: [{ name: 'Taras Andrusyshyn' }],
   creator: 'Taras Andrusyshyn',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'Taras Andrusyshyn',
-    title: 'Taras Andrusyshyn — Tech & Marketing',
+    title: 'Taras Andrusyshyn — Autonomous Business / AI',
     description:
-      'Blog about tech, marketing, and building efficient digital systems.',
+      'Autonomous business architecture in the AI era. Case studies, automation, and growth strategies where 80% of processes are handled by AI agents.',
   },
   twitter: {
     card: 'summary_large_image',

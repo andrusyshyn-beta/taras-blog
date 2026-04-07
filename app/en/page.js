@@ -20,11 +20,11 @@ export default function HomePage() {
               New material every week
             </div>
             <h1 className={styles.heroTitle}>
-              Adopt AI faster than{' '}
-              <span className={styles.heroAccent}>competitors</span>
+              Building an AI-first company{' '}
+              <span className={styles.heroAccent}>with zero employees</span>
             </h1>
             <p className={styles.heroDesc}>
-              Practical blog about Artificial Intelligence, automation, and growth marketing. I show how one person with the right AI tools can work more efficiently than a whole team.
+              Autonomous business architecture in the AI era. Case studies, automation, and growth strategies where 80% of processes are handled by AI agents.
             </p>
             <div className={styles.heroActions}>
               <Link href="/en/blog" className="btn btn--primary">

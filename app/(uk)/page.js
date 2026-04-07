@@ -20,11 +20,11 @@ export default function HomePage() {
               Новий матеріал щотижня
             </div>
             <h1 className={styles.heroTitle}>
-              Впроваджуй AI швидше за{' '}
-              <span className={styles.heroAccent}>конкурентів</span>
+              Будую AI-first компанію{' '}
+              <span className={styles.heroAccent}>без жодного працівника</span>
             </h1>
             <p className={styles.heroDesc}>
-              Практичний блог про штучний інтелект, автоматизацію та growth-маркетинг. Показую, як одна людина з правильним AI-інструментарієм може працювати ефективніше за цілу команду.
+              Архітектура автономного бізнесу в епоху ШІ. Кейси, автоматизація та стратегії росту, де 80% процесів виконують AI-агенти.
             </p>
             <div className={styles.heroActions}>
               <Link href="/blog" className="btn btn--primary">

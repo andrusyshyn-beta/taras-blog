@@ -12,21 +12,21 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://taras-blog.vercel.app'),
   title: {
-    default: 'Taras Andrusyshyn — Технології та маркетинг',
+    default: 'Taras Andrusyshyn — Автономний бізнес / AI',
     template: '%s | Taras Andrusyshyn',
   },
   description:
-    'Блог про ШІ, технології та маркетинг. Практичний контент без зайвої теорії: інструменти, стратегії, кейси.',
-  keywords: ['технології', 'маркетинг', 'digital', 'блог', 'Taras Andrusyshyn'],
+    'Архітектура автономного бізнесу в епоху ШІ. Кейси, автоматизація та стратегії росту, де 80% процесів виконують AI-агенти.',
+  keywords: ['AI', 'автоматизація', 'соло-підприємництво', 'блог', 'Taras Andrusyshyn'],
   authors: [{ name: 'Taras Andrusyshyn' }],
   creator: 'Taras Andrusyshyn',
   openGraph: {
     type: 'website',
     locale: 'uk_UA',
     siteName: 'Taras Andrusyshyn',
-    title: 'Taras Andrusyshyn — Технології та маркетинг',
+    title: 'Taras Andrusyshyn — Автономний бізнес / AI',
     description:
-      'Блог про технології, маркетинг та побудову ефективних digital-систем.',
+      'Архітектура автономного бізнесу в епоху ШІ. Кейси, автоматизація та стратегії росту, де 80% процесів виконують AI-агенти.',
   },
   twitter: {
     card: 'summary_large_image',

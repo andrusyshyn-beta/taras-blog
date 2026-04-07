@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Послуги та Консультації',
-  description: 'Особисті консультації з впровадження AI, контент-стратегії та growth маркетингу.',
+  title: 'Послуги - Побудуй свій автономний AI-бізнес | Taras Andrusyshyn',
+  description: 'Допомагаю соло-підприємцям впроваджувати автоматизацію та AI-агентів для масштабування без найму працівників.',
 };
 
 export default function ServicesPage() {
@@ -10,32 +10,32 @@ export default function ServicesPage() {
     <div className="container--narrow" style={{ paddingTop: 'var(--space-7)', paddingBottom: 'var(--space-7)' }}>
       <div className="prose">
         <div style={{ textAlign: 'center', marginBottom: 'var(--space-5)' }}>
-          <span className="tag" style={{ marginBottom: '10px', display: 'inline-block' }}>Співпраця</span>
-          <h1 style={{ marginTop: 0, marginBottom: 'var(--space-2)' }}>Консультації та AI-Консалтинг</h1>
+          <span className="tag" style={{ marginBottom: '10px', display: 'inline-block' }}>Експертиза</span>
+          <h1 style={{ marginTop: 0, marginBottom: 'var(--space-2)' }}>Масштабуйте бізнес, <span className="text-accent">а не команду</span></h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)' }}>
-            Допомагаю фаундерам та маркетологам впроваджувати AI-інструменти для систематизації процесів та збільшення доходів.
+            Допомагаю фаундерам трансформувати класичний бізнес в автономну AI-first модель. Повна автоматизація маркетингу та розробки.
           </p>
         </div>
         
-        <h2>Для кого це?</h2>
+        <h2>Кому я буду корисний?</h2>
         <ul>
-          <li><strong>Власникам бізнесу</strong>, які хочуть оптимізувати витрати на виготовлення контенту та автоматизувати рутину свого відділу.</li>
-          <li><strong>Маркетологам</strong>, яким потрібно підвищити власну продуктивність у 3-5 разів за допомогою сучасного AI-стеку інструментів.</li>
-          <li><strong>Експертам</strong>, яким необхідно вибудувати системну SEO та контент-стратегію для стабільного залучення органічних клієнтів.</li>
+          <li><strong>Соло-підприємцям</strong>, які хочуть позбутися рутини та перекласти 80% операцій на AI-агентів.</li>
+          <li><strong>Власникам продуктів</strong>, які прагнуть масштабувати маркетинг без роздування штату та менеджменту людей.</li>
+          <li><strong>Агентствам</strong>, яким потрібно підвищити маржинальність за рахунок автоматизації контенту та SEO.</li>
         </ul>
 
-        <h2>Які проблеми я вирішую?</h2>
+        <h2>Основні напрямки</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-3)', marginTop: 'var(--space-4)' }}>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Впровадження AI у процеси</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Побудова AI-відділів</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              Проводжу аудит вашого поточного робочого процесу та допомагаю налаштувати екосистему (Claude, Perplexity, Make), яка забирає на себе більше половини операційної роботи.
+              Заміна функцій копірайтерів, менеджерів підтримки та аналітиків складними воркфлоу в n8n/Make. Ви отримуєте "співробітників", які працюють 24/7 без зарплати.
             </p>
           </div>
           <div style={{ padding: 'var(--space-4)', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)' }}>
-            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Контент-стратегія та SEO</h3>
+            <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>Автоматичне SEO та Контент</h3>
             <p style={{ fontSize: '0.95rem', marginBottom: 0, color: 'var(--text-secondary)' }}>
-              Розробляю покрокову структуру контент-кластерів для генерації органічного трафіку. Розбираємо, як зробити контент, який дійсно продає.
+              Створення систем, які самостійно аналізують ринок, генерують SEO-кластери та публікують контент. Органічний ріст без участі людини.
             </p>
           </div>
         </div>
