@@ -7,6 +7,8 @@ tags: ["AI-Agents", "Marketing", "n8n", "Solopreneurship"]
 featured: true
 ---
 
+> **TL;DR:** One person with an AI stack for **$150/mo** can replace a marketing department worth **$80,000/yr**. The secret to success: we automate not \"functions,\" but **80% of routine workflows**, leaving only strategy and empathy for humans. The ROI of implementation is **544%**.
+
 How much does normal marketing cost? A copywriter, designer, funnel manager, video production, targeter — the total comes to around **$50,000 to $80,000 per year** in salaries alone (based on mid-range regional markets), not even counting tools and ad budgets. For most small businesses, this is simply unrealistic.
 
 But before we talk about what AI *can* do, we must honestly state what it *cannot*.
