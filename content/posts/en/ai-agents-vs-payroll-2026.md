@@ -4,7 +4,6 @@ date: "2026-04-07"
 excerpt: "The real economics of automation: how one person with the right stack replaces 5 specialists at 1% of the cost. 2026 insights."
 category: "Automation"
 tags: ["AI-Agents", "Marketing", "n8n", "Solopreneurship"]
-image: "/images/posts/ai-agents-payroll.png"
 featured: true
 ---
 
