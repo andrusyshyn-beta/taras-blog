@@ -1,11 +1,12 @@
 ---
 title: "Маніфест соло-фаундера у 2026: Чому це не про талант, а про правильний стек"
 date: "2026-04-02"
+updated: "2026-04-08"
 excerpt: "Успішні соло-засновники — це не обов'язково генії кодингу. Розбираємо, як AI-інструменти дозволяють одній людині замінити цілу компанію."
 category: "Бізнес та AI"
-tags: ["соло-засновник", "solo founder", "підприємництво", "startup", "AI tools"]
-featured: false
-image: ""
+tags: ["Solo Founder", "Business Model", "Automation", "AI Agents", "Entrepreneurship"]
+featured: true
+image: "/images/posts/solo-founder.png"
 ---
 
 ## TL;DR: Головне за 30 секунд

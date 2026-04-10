@@ -5,18 +5,59 @@ import styles from './page.module.css';
 export const metadata = {
   title: 'About Me',
   description: 'Taras Andrusyshyn — studying AI, writing about tech and marketing. Practical content without fluff.',
+  alternates: {
+    canonical: 'https://taras-blog.vercel.app/en/about',
+    languages: {
+      'uk-UA': 'https://taras-blog.vercel.app/about',
+      'en-US': 'https://taras-blog.vercel.app/en/about',
+    },
+  },
+};
+
+const PERSON_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Taras Andrusyshyn',
+  alternateName: 'Тарас Андрусишин',
+  url: 'https://taras-blog.vercel.app/en/about',
+  image: 'https://taras-blog.vercel.app/images/taras-photo.jpg',
+  jobTitle: 'AI Developer & Growth Marketer',
+  description: 'Marketer and AI developer with 9+ years in digital. Managed $500k+ in ad budgets. Co-founder of ITBS and a web studio.',
+  knowsAbout: [
+    'AI Tools', 'Prompt Engineering', 'Growth Marketing',
+    'Content Strategy', 'Marketing Automation', 'Paid Traffic',
+    'Solo Entrepreneurship', 'Make.com', 'n8n', 'Claude AI', 'GPT-4o',
+  ],
+  hasCredential: [
+    { '@type': 'EducationalOccupationalCredential', name: 'Co-founder & CEO of ITBS (IT Business School)', credentialCategory: 'Entrepreneurship' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Co-founder of web studio and marketing agency (2016)', credentialCategory: 'Marketing' },
+  ],
+  sameAs: [
+    'https://ain.ua/ru/2018/01/31/it-business-school-podvodit-itogi-pervogo-vypuska-kursa-seo-it-autsors-kompanij/',
+    'https://www.facebook.com/andrusyshyn.ts',
+    'https://www.threads.net/@ts_andrusyshyn',
+    'https://t.me/lab_of_autonomy',
+    'https://t.me/tsand07',
+    'https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/',
+  ],
+  email: 'andrusyshyn.ts@gmail.com',
 };
 
 const timeline = [
   { year: '2026', title: 'Launched personal media hub', desc: 'Centralized all content on my own website.' },
-  { year: '2017', title: 'Co-founder and CEO of ITBS', desc: 'School for IT entrepreneurs.' },
+  { year: '2017', title: 'Co-founder & CEO of ITBS (IT Business School)', desc: 'Launched one of the first specialized IT schools for those who want to start their own IT company. Featured in AIN.ua.' },
   { year: '2016', title: 'Co-founder of web studio and marketing agency', desc: '' },
   { year: '2015', title: 'Paid Traffic', desc: 'Started working with paid traffic: Google Ads, Yandex Direct, Facebook, Instagram.' },
 ];
 
 export default function AboutPage() {
   return (
-    <div className={styles.page}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_SCHEMA) }}
+      />
+      <div className={styles.page}>
       <div className="container">
         {/* Hero */}
         <div className={styles.hero}>
@@ -35,8 +76,8 @@ export default function AboutPage() {
             </p>
             <div className={styles.socialLinks}>
               <a href="https://t.me/lab_of_autonomy" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Telegram</a>
-              <a href="https://www.facebook.com/andrusyshyn.ts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Facebook</a>
-              <a href="https://www.instagram.com/ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
+              <a href="https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
+               <a href="https://www.facebook.com/andrusyshyn.ts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Facebook</a>
               <a href="https://www.threads.net/@ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Threads</a>
               <a href="mailto:andrusyshyn.ts@gmail.com" className={styles.socialLink}>Email</a>
             </div>
@@ -136,7 +177,8 @@ export default function AboutPage() {
           </aside>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

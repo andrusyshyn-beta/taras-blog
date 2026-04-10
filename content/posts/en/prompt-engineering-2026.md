@@ -1,11 +1,12 @@
 ---
 title: "How to Get the Most Out of Large Language Models: Prompt Engineering 2026"
 date: "2026-03-31"
+updated: "2026-04-08"
 excerpt: "A simple and maximally useful guide for beginners and practitioners of GPT-4o, Claude, Gemini, and other LLMs."
-category: "Artificial Intelligence"
-tags: ["Prompt Engineering", "LLM", "GPT-4o", "Claude", "artificial intelligence", "AI", "Gemini"]
-featured: false
-image: ""
+category: "AI"
+tags: ["Prompt Engineering", "LLM", "AI Tools", "Generative AI"]
+featured: true
+image: "/images/posts/prompt-engineering.png"
 ---
 
 ## TL;DR: Key Takeaways in 30 Seconds

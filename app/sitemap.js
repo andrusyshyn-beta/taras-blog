@@ -8,14 +8,14 @@ export default function sitemap() {
 
   const ukBlogUrls = ukPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updated || post.date),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const enBlogUrls = enPosts.map((post) => ({
     url: `${baseUrl}/en/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updated || post.date),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));

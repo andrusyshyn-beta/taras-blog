@@ -99,8 +99,9 @@
 .featuredImage img {
   width: 100%;
   border-radius: var(--radius-lg);
-  max-height: 500px;
+  max-height: 420px;
   object-fit: cover;
+  object-position: center;
   box-shadow: var(--shadow-lg);
 }
 
@@ -213,9 +214,9 @@
 
 /* Related */
 .related {
-  padding: var(--space-8) 0;
+  padding: var(--space-6) 0;
   border-top: 1px solid var(--border);
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
 }
 
 .related h2 {

@@ -1,6 +1,7 @@
 ---
 title: "Випадковість на мільярди: Як Anthropic злила Claude Code та що це змінить перед IPO"
 date: "2026-04-06"
+updated: "2026-04-08"
 excerpt: "Випадковий злив 512,000 рядків коду за $2.5 млрд доходу: як найбезпечніша AI-компанія Anthropic припустилася дитячої помилки і що це змінить для індустрії."
 category: "AI новини"
 tags: ["Anthropic", "Claude Code", "AI Leak", "Cybersecurity", "IPO"]

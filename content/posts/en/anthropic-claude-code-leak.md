@@ -1,6 +1,7 @@
 ---
 title: "A Billion-Dollar Mistake: How Anthropic Leaked Claude Code and What it Changes Ahead of the IPO"
 date: "2026-04-06"
+updated: "2026-04-08"
 excerpt: "Accidental leak of 512,000 lines of code for $2.5B in revenue: how Anthropic, the 'safest' AI company, made a rookie mistake and what it means for the industry."
 category: "AI News"
 tags: ["Anthropic", "Claude Code", "AI Leak", "Cybersecurity", "IPO"]

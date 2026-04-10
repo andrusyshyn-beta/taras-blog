@@ -1,6 +1,7 @@
 ---
 title: "Most People Still Don't Understand What Happened on February 5, 2026 and Why It Matters More Than Covid"
 date: "2026-03-30"
+updated: "2026-04-08"
 excerpt: "How the release of GPT-5.3-Codex and Claude Opus 4.6 triggered the process of recursive AI self-improvement and why the world will never be the same."
 category: "Artificial Intelligence"
 tags: ["artificial intelligence", "GPT-5.3", "Claude Opus 4.6", "future of work", "recursive improvement"]

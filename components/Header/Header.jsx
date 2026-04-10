@@ -14,8 +14,8 @@ const navLinks = [
 ];
 
 const socialLinks = [
+  { href: 'https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/', icon: 'in', label: 'LinkedIn' },
   { href: 'https://www.facebook.com/andrusyshyn.ts', icon: 'f', label: 'Facebook' },
-  { href: 'https://www.instagram.com/ts_andrusyshyn', icon: '◎', label: 'Instagram' },
   { href: 'https://www.threads.net/@ts_andrusyshyn', icon: '@', label: 'Threads' },
 ];
 

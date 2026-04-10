@@ -1,6 +1,7 @@
 ---
 title: "Why Programmers Are Losing to Non-Technical People: Insight from Palantir's CEO on the AI Era"
 date: "2026-03-28"
+updated: "2026-04-08"
 excerpt: "We live in a world where instructions no longer hold special value. Why bartenders and marketers are more successful at launching AI products than IT specialists."
 category: "Business & AI"
 tags: ["Palantir", "AI", "startups", "artificial intelligence", "entrepreneurship", "solo founder"]

@@ -1,6 +1,7 @@
 ---
 title: "How I Stopped Searching for Apartments Manually: Created an AI Bot for Warsaw Real Estate Without Servers or DevOps"
 date: "2026-04-06"
+updated: "2026-04-08"
 excerpt: "A case study in automation on the Warsaw real estate market: how to build a system in 4 hours that scans OLX, Otodom, and other services, filters spam, and publishes the best deals to Telegram."
 category: "AI & Development"
 tags: ["n8n", "AI agents", "automation", "real estate", "Warsaw", "Google Sheets"]

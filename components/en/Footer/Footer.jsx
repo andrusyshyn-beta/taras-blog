@@ -15,8 +15,8 @@ const categories = [
 ];
 
 const socials = [
+  { href: 'https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/', label: 'LinkedIn' },
   { href: 'https://www.facebook.com/andrusyshyn.ts', label: 'Facebook' },
-  { href: 'https://www.instagram.com/ts_andrusyshyn', label: 'Instagram' },
   { href: 'https://www.threads.net/@ts_andrusyshyn', label: 'Threads' },
 ];
 

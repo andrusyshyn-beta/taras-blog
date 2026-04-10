@@ -1,6 +1,7 @@
 ---
 title: "Top 7 Actually Working Plugins for Claude Code (And Why the Rest Is Garbage)"
 date: "2026-03-27"
+updated: "2026-04-08"
 excerpt: "A month of testing MCP servers and plugins for Claude showed that 80% of them are useless. Keep only these 7 tools for maximum productivity."
 category: "Artificial Intelligence"
 tags: ["Claude Code", "MCP", "plugins", "development", "productivity", "AI tools"]

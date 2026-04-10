@@ -1,6 +1,7 @@
 ---
 title: "How to Build a Content Strategy That Actually Drives Traffic"
 date: "2026-03-08"
+updated: "2026-04-08"
 excerpt: "A step-by-step guide to creating a content strategy that generates organic traffic without paid advertising. Proven in practice."
 category: "Marketing"
 tags: ["content", "SEO", "strategy", "traffic"]

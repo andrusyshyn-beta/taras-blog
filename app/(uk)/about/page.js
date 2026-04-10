@@ -5,18 +5,59 @@ import styles from './page.module.css';
 export const metadata = {
   title: 'Про мене',
   description: 'Taras Andrusyshyn — вивчаю ШІ, пишу про технології та маркетинг. Практичний контент без зайвої теорії.',
+  alternates: {
+    canonical: 'https://taras-blog.vercel.app/about',
+    languages: {
+      'uk-UA': 'https://taras-blog.vercel.app/about',
+      'en-US': 'https://taras-blog.vercel.app/en/about',
+    },
+  },
+};
+
+const PERSON_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Taras Andrusyshyn',
+  alternateName: 'Тарас Андрусишин',
+  url: 'https://taras-blog.vercel.app/about',
+  image: 'https://taras-blog.vercel.app/images/taras-photo.jpg',
+  jobTitle: 'AI Developer & Growth Marketer',
+  description: 'Маркетолог та AI-розробник. 9+ років у digital. Керував рекламними бюджетами $500k+. Співзасновник ITBS та веб-студії.',
+  knowsAbout: [
+    'AI Tools', 'Prompt Engineering', 'Growth Marketing',
+    'Content Strategy', 'Marketing Automation', 'Paid Traffic',
+    'Solo Entrepreneurship', 'Make.com', 'n8n', 'Claude AI', 'GPT-4o',
+  ],
+  hasCredential: [
+    { '@type': 'EducationalOccupationalCredential', name: 'Co-founder & CEO of ITBS (IT Business School)', credentialCategory: 'Entrepreneurship' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Co-founder of web studio and marketing agency (2016)', credentialCategory: 'Marketing' },
+  ],
+  sameAs: [
+    'https://ain.ua/ru/2018/01/31/it-business-school-podvodit-itogi-pervogo-vypuska-kursa-seo-it-autsors-kompanij/',
+    'https://www.facebook.com/andrusyshyn.ts',
+    'https://www.threads.net/@ts_andrusyshyn',
+    'https://t.me/lab_of_autonomy',
+    'https://t.me/tsand07',
+    'https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/',
+  ],
+  email: 'andrusyshyn.ts@gmail.com',
 };
 
 const timeline = [
   { year: '2026', title: 'Запуск особистого медіа-хабу', desc: 'Централізував весь контент на власному сайті.' },
-  { year: '2017', title: 'Співзасновник та CEO ITBS', desc: 'Школа для IT підприємців.' },
+  { year: '2017', title: 'Співзасновник та CEO ITBS (IT Business School)', desc: 'Запустив одну з перших профільних IT шкіл для тих хто хоче відкрити свою IT компанію. Згадувався в AIN.ua.' },
   { year: '2016', title: 'Співзасновник веб-студії та маркетингового агентства', desc: '' },
   { year: '2015', title: 'Платний трафік', desc: 'Почав займатись платним трафіком: Google Adwords, Yandex Direct, Facebook, Instagram.' },
 ];
 
 export default function AboutPage() {
   return (
-    <div className={styles.page}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_SCHEMA) }}
+      />
+      <div className={styles.page}>
       <div className="container">
         {/* Hero */}
         <div className={styles.hero}>
@@ -35,8 +76,8 @@ export default function AboutPage() {
             </p>
             <div className={styles.socialLinks}>
               <a href="https://t.me/lab_of_autonomy" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Telegram</a>
+              <a href="https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</a>
               <a href="https://www.facebook.com/andrusyshyn.ts" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Facebook</a>
-              <a href="https://www.instagram.com/ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
               <a href="https://www.threads.net/@ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Threads</a>
               <a href="mailto:andrusyshyn.ts@gmail.com" className={styles.socialLink}>Email</a>
             </div>
@@ -136,6 +177,7 @@ export default function AboutPage() {
           </aside>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

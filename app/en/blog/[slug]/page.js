@@ -12,11 +12,27 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://taras-blog.vercel.app/en/blog/${slug}`,
+      languages: {
+        'uk-UA': `https://taras-blog.vercel.app/blog/${slug}`,
+        'en-US': `https://taras-blog.vercel.app/en/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
+      authors: ['https://taras-blog.vercel.app/en/about'],
+      images: [post.image || '/images/default-og.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image || '/images/default-og.png'],
     },
   };
 }
@@ -36,15 +52,31 @@ export default async function ArticlePage({ params }) {
   const related = getRelatedPosts(post.slug, post.category, 3);
 
   // Schema.org structured data
+  const authorEntity = {
+    '@type': 'Person',
+    name: 'Taras Andrusyshyn',
+    url: 'https://taras-blog.vercel.app/en/about',
+    jobTitle: 'AI Developer & Growth Marketer',
+    sameAs: [
+      'https://t.me/lab_of_autonomy',
+      'https://www.facebook.com/andrusyshyn.ts',
+      'https://www.instagram.com/ts_andrusyshyn',
+    ],
+  };
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    author: { '@type': 'Person', name: 'Taras Andrusyshyn' },
-    publisher: { '@type': 'Person', name: 'Taras Andrusyshyn' },
+    url: `https://taras-blog.vercel.app/en/blog/${post.slug}`,
+    author: authorEntity,
+    publisher: authorEntity,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
+    inLanguage: 'en-US',
+    ...(post.image && { image: post.image }),
+    ...(post.tags && { keywords: post.tags.join(', ') }),
   };
 
   const breadcrumbSchema = {
@@ -57,11 +89,27 @@ export default async function ArticlePage({ params }) {
     ],
   };
 
+  // FAQPage schema — auto-generated from ## FAQ section in the post
+  const faqSchema = post.faqItems && post.faqItems.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  } : null;
+
+  const schemas = [schema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
 
       <article className={styles.article}>
@@ -107,7 +155,7 @@ export default async function ArticlePage({ params }) {
           {/* Featured image */}
           {post.image && (
             <div className={styles.featuredImage}>
-              <div className="container">
+              <div className="container--narrow">
                 <img src={post.image} alt={post.title} />
               </div>
             </div>
@@ -134,7 +182,7 @@ export default async function ArticlePage({ params }) {
           <div className={styles.share}>
             <span>Share:</span>
             <a
-              href={`https://t.me/share/url?url=https://andrusyshyn.vercel.app/en/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
+              href={`https://t.me/share/url?url=https://taras-blog.vercel.app/en/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareBtn}
@@ -142,7 +190,7 @@ export default async function ArticlePage({ params }) {
               Telegram
             </a>
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://andrusyshyn.vercel.app/en/blog/${post.slug}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://taras-blog.vercel.app/en/blog/${post.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.shareBtn}

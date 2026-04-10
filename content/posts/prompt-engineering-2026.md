@@ -1,11 +1,12 @@
 ---
 title: "Як отримати максимум від великих мовних моделей: Prompt Engineering 2026"
 date: "2026-03-31"
+updated: "2026-04-08"
 excerpt: "Просте і максимально корисне керівництво для новачків і практикуючих користувачів GPT-4o, Claude, Gemini та інших LLM."
 category: "Штучний інтелект"
-tags: ["Prompt Engineering", "LLM", "GPT-4o", "Claude", "штучний інтелект", "AI", "Gemini"]
-featured: false
-image: ""
+tags: ["Prompt Engineering", "LLM", "GPT-4", "Claude", "AI", "Штучний інтелект"]
+image: "/images/posts/prompt-engineering.png"
+featured: true
 ---
 
 ## TL;DR: Головне за 30 секунд

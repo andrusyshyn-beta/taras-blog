@@ -1,6 +1,7 @@
 ---
 title: "Email Marketing in 2026: What Changed and How to Adapt"
 date: "2026-02-28"
+updated: "2026-04-08"
 excerpt: "Detailed analysis of email marketing trends in 2026: AI personalization, new Gmail algorithms, and strategies showing the highest ROI."
 category: "Marketing"
 tags: ["email", "marketing", "trends", "2026"]

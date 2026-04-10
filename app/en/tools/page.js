@@ -2,83 +2,65 @@ import styles from './page.module.css';
 
 const tools = [
   {
-    id: 'n8n',
-    name: 'n8n (Cloud)',
-    category: 'Automation',
-    description: 'My #1 tool for building complex AI agents. Visually design workflows that handle thousands of requests autonomously.',
-    rating: '★★★★★',
-    link: 'https://n8n.io/',
-    cta: 'Start Automating'
-  },
-  {
-    id: 'make',
-    name: 'Make.com',
-    category: 'Automation',
-    description: 'The easiest way to connect hundreds of apps without code. Perfect for marketing funnels and data collection.',
-    rating: '★★★★★',
-    link: 'https://www.make.com/',
-    cta: 'Try Make'
-  },
-  {
     id: 'antigravity',
     name: 'Antigravity AI',
     category: 'AI Coding Agent',
-    description: 'An intelligent agent that helps me write this blog, debug code, and implement AI solutions in hours.',
+    description: 'My #1 tool for autonomous development and automation. An intelligent agent that helps me build this blog, debug code, and implement AI solutions in hours.',
     rating: '★★★★★',
     link: 'https://gemini.google.com/',
-    cta: 'Try AI'
-  },
-  {
-    id: 'elevenlabs',
-    name: 'ElevenLabs',
-    category: 'AI Voice',
-    description: 'The most realistic AI voice generator. Used for narrating articles and creating human-like digital content.',
-    rating: '★★★★★',
-    link: 'https://elevenlabs.io/',
-    cta: 'Voice Over'
-  },
-  {
-    id: 'heygen',
-    name: 'HeyGen',
-    category: 'AI Video',
-    description: 'A revolution in video marketing. I use it to create AI avatars that speak in my voice and generate content 24/7.',
-    rating: '★★★★★',
-    link: 'https://www.heygen.com/',
-    cta: 'Create Avatar'
-  },
-  {
-    id: 'hostinger',
-    name: 'Hostinger',
-    category: 'Web Hosting',
-    description: 'Where I host my projects and self-hosted tools. Fast, reliable, and fairly priced for developers.',
-    rating: '★★★★★',
-    link: 'https://www.hostinger.com/',
-    cta: 'Get Hosting'
+    cta: 'Try Antigravity'
   },
   {
     id: 'claude',
     name: 'Claude AI',
     category: 'AI Assistant',
-    description: 'My primary tool for coding and data analysis. The most intelligent and human-like AI on the market.',
+    description: 'My primary tool for architectural decisions and deep data analysis. The most intelligent AI today for working with complex context.',
     rating: '★★★★★',
     link: 'https://claude.ai/',
     cta: 'Try Claude'
+  },
+  {
+    id: 'n8n',
+    name: 'n8n (Cloud)',
+    category: 'Automation',
+    description: 'The central nervous system of my projects. Allows visual creation of workflows that process thousands of requests without your intervention.',
+    rating: '★★★★★',
+    link: 'https://n8n.io/',
+    cta: 'Start Automation'
+  },
+  {
+    id: 'make',
+    name: 'Make.com',
+    category: 'Automation',
+    description: 'The most convenient service for quickly connecting marketing tools without code. Ideal for simple funnels and data collection.',
+    rating: '★★★★★',
+    link: 'https://www.make.com/',
+    cta: 'Try Make'
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    category: 'AI Voice',
+    description: 'The most realistic voice generation in 2026. I use it for narrating articles and creating content indistinguishable from human speech.',
+    rating: '★★★★★',
+    link: 'https://elevenlabs.io/',
+    cta: 'Generate Voice'
   }
 ];
 
 export const metadata = {
   title: 'Tools I Use | Taras Andrusyshyn',
-  description: 'A curated list of AI services, software, and resources I use for marketing automation and development.',
+  description: 'A list of proven AI services, software, and resources for marketing automation and development.',
 };
 
 export default function ToolsPage() {
   return (
     <div className={`container ${styles.page}`}>
       <section className={styles.intro}>
-        <h1 className={styles.title}>The Stack</h1>
+        <h1 className={styles.title}>My Stack</h1>
         <p className={styles.description}>
-          A list of the tools I actually use to build autonomous systems, 
-          marketing, and development. Only what is proven in practice.
+          A list of tools I actually use to build autonomous systems, 
+          marketing, and development. Only what has been tested in practice.
         </p>
       </section>
 
@@ -107,7 +89,7 @@ export default function ToolsPage() {
 
       <p className={styles.disclosure}>
         * Some of the links above are affiliate links. This means I may receive a small commission 
-        if you subscribe, at no additional cost to you. I only recommend what actually delivers results.
+        if you sign up, at no additional cost to you. I only recommend what actually brings results.
       </p>
     </div>
   );

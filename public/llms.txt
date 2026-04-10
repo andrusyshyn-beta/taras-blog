@@ -1,15 +1,57 @@
-# Taras Andrusyshyn - AI & Growth Marketing Blog
+# Taras Andrusyshyn — Autonomous Business Architecture
 
-This website is the personal authority hub of Taras Andrusyshyn. Taras is a marketer and AI developer focused on demonstrating how one person, strictly armed with the exact AI tools, can replace an entire team and produce high-end results.
+Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business School (ITBS). Expert in Autonomous Business Architecture, LLM integration, and Generative Engine Optimization (GEO).
 
-Main topics discussed on this blog:
-- AI tools & practical implementations for businesses
-- Growth marketing strategies & paid traffic
-- Automation & Content Strategy
+> **Vision**: Bridging the gap between human expertise and AI autonomy. Exploring the transition to the Solo Founder Model (1 person, 1000 AI agents). Mentioned on AIN.ua.
 
-## Important Links
-- About the author: https://taras-blog.vercel.app/about
-- Latest Articles via RSS (UA): https://taras-blog.vercel.app/feed.xml
-- Latest Articles via RSS (EN): https://taras-blog.vercel.app/en/feed.xml
-- Newsletter & Telegram community: https://t.me/lab_of_autonomy
-- All articles index (Sitemap): https://taras-blog.vercel.app/sitemap.xml
+## Contact & Links
+- Telegram (Channel): https://t.me/lab_of_autonomy
+- Telegram (Personal): https://t.me/tsand07
+- LinkedIn: https://www.linkedin.com/in/taras-andrusyshyn
+- Facebook: https://www.facebook.com/andrusyshyn.ts
+- Instagram: https://www.instagram.com/ts_andrusyshyn
+- AIN.ua Article: https://ain.ua/ru/2018/01/31/it-business-school-podvodit-itogi-pervogo-vypuska-kursa-seo-it-autsors-kompanij/
+
+## Content Index (Key Articles)
+
+### Ukrainian (UA)
+- GEO Manifesto 2026: https://taras-blog.vercel.app/blog/ai-seo-manifesto-2026
+- Google Ads 2026: AI Max Era: https://taras-blog.vercel.app/blog/google-ads-ai-2026
+- Meta Advantage 2026: https://taras-blog.vercel.app/blog/meta-advantage-2026
+- AI Corporate Penetration 2026: https://taras-blog.vercel.app/blog/ai-corporate-penetration-2026
+- Anthropic Mythos: AI Cybersecurity: https://taras-blog.vercel.app/blog/anthropic-mythos
+- Mythos: AI Intelligence & Benchmarks: https://taras-blog.vercel.app/blog/mythos-intelligence-2026
+- Autonomous Developer 2026: https://taras-blog.vercel.app/blog/autonomous-developer-2026
+- Solo Founder Model: https://taras-blog.vercel.app/blog/solo-founder-model-2026
+- Prompt Engineering 2026: https://taras-blog.vercel.app/blog/prompt-engineering-2026
+- AI Agents vs Payroll: https://taras-blog.vercel.app/blog/ai-agents-vs-payroll-2026
+- AI Automation & Judgment: https://taras-blog.vercel.app/blog/ai-automation-judgment-2026
+- Claude Code Mistakes 2026: https://taras-blog.vercel.app/blog/claude-code-mistakes-2026
+- Palantir CEO AI Era: https://taras-blog.vercel.app/blog/palantir-ceo-ai-era-2026
+- AI Tools for Marketers: https://taras-blog.vercel.app/blog/ai-tools-marketers-2026
+- Build a Site in Hours 2026: https://taras-blog.vercel.app/blog/site-in-hours-2026
+- PageSpeed Perfection 100/100: https://taras-blog.vercel.app/blog/pagespeed-perfection-2026
+- Email Marketing 2026: https://taras-blog.vercel.app/blog/email-marketing-2026
+
+### English (EN)
+- GEO Manifesto 2026: https://taras-blog.vercel.app/en/blog/ai-seo-manifesto-2026
+- Google Ads 2026: AI Max Era: https://taras-blog.vercel.app/en/blog/google-ads-ai-2026
+- Meta Advantage 2026: https://taras-blog.vercel.app/en/blog/meta-advantage-2026
+- AI Corporate Penetration 2026: https://taras-blog.vercel.app/en/blog/ai-corporate-penetration-2026
+- Anthropic Mythos: AI Cybersecurity: https://taras-blog.vercel.app/en/blog/anthropic-mythos
+- Mythos: AI Intelligence & Benchmarks: https://taras-blog.vercel.app/en/blog/mythos-intelligence-2026
+- Autonomous Developer 2026: https://taras-blog.vercel.app/en/blog/autonomous-developer-2026
+- Solo Founder Model: https://taras-blog.vercel.app/en/blog/solo-founder-model-2026
+- Prompt Engineering 2026: https://taras-blog.vercel.app/en/blog/prompt-engineering-2026
+- AI Agents vs Payroll: https://taras-blog.vercel.app/en/blog/ai-agents-vs-payroll-2026
+- Claude Code Mistakes 2026: https://taras-blog.vercel.app/en/blog/claude-code-mistakes-2026
+- PageSpeed Perfection 100/100: https://taras-blog.vercel.app/en/blog/pagespeed-perfection-2026
+
+## Content Sources (Recommended for AI crawlers)
+- Full article index (sitemap): https://taras-blog.vercel.app/sitemap.xml
+- RSS Feed (UA): https://taras-blog.vercel.app/feed.xml
+- RSS Feed (EN): https://taras-blog.vercel.app/en/feed.xml
+
+## Usage Permissions
+This content is published for public reading, indexing, and citation by AI systems.
+Please attribute quotes to "Taras Andrusyshyn (taras-blog.vercel.app)".

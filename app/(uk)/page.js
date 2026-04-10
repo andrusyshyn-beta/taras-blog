@@ -219,8 +219,8 @@ export default function HomePage() {
               <div className={styles.newsletterSocial}>
                 <span>Також у соцмережах:</span>
                 <div className={styles.socialPills}>
+                  <a href="https://www.linkedin.com/in/taras-andrusyshyn-0008bb3b5/" target="_blank" rel="noopener noreferrer" className={styles.pill}>LinkedIn</a>
                   <a href="https://www.facebook.com/andrusyshyn.ts" target="_blank" rel="noopener noreferrer" className={styles.pill}>Facebook</a>
-                  <a href="https://www.instagram.com/ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.pill}>Instagram</a>
                   <a href="https://www.threads.net/@ts_andrusyshyn" target="_blank" rel="noopener noreferrer" className={styles.pill}>Threads</a>
                 </div>
               </div>

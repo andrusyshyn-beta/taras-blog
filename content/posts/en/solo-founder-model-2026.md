@@ -1,11 +1,12 @@
 ---
 title: "The Solo Founder Manifesto in 2026: It's Not About Talent, It's About the Right Stack"
 date: "2026-04-02"
+updated: "2026-04-08"
 excerpt: "Successful solo founders aren't necessarily coding geniuses. Let's break down how AI tools allow one person to replace an entire company."
 category: "Business & AI"
-tags: ["solo founder", "entrepreneurship", "startup", "AI tools"]
-featured: false
-image: ""
+tags: ["Solo Founder", "Business", "AI Agents", "Automation"]
+featured: true
+image: "/images/posts/solo-founder.png"
 ---
 
 ## TL;DR: Key Takeaways in 30 Seconds
