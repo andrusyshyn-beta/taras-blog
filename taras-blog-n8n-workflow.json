@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "6c5e4e8c-cdc1-4874-8148-7d0a4d5052b0",
+      "name": "Daily_Trigger_09_00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+      },
+      "id": "3a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+      "name": "RSS_TechCrunch_AI",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        150
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.theverge.com/rss/index.xml"
+      },
+      "id": "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
+      "name": "RSS_TheVerge_AI",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://news.ycombinator.com/rss"
+      },
+      "id": "2b3c4d5e-6f7g-8h9i-0j1k-l2m3n4o5p6q7",
+      "name": "RSS_HackerNews",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        450
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition"
+      },
+      "id": "m1e2r3g4-e56f-7g8h-9i0j-k1l2m3n4o5p6",
+      "name": "Merge_News_Feeds",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        -150,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst filtered = items.filter(item => {\n  const text = ((item.json.title || '') + ' ' + (item.json.content || '')).toLowerCase();\n  return text.includes('ai') || text.includes('agent') || text.includes('autonomous') || text.includes('intelligence');\n});\nconst deduped = Array.from(new Set(filtered.map(a => a.json.title)))\n  .map(title => filtered.find(a => a.json.title === title).json);\n\nreturn { headlines: deduped.slice(0, 8).map(i => `[${i.title}] (Snippet: ${(i.contentSnippet || i.content || 'N/A').substring(0, 500)}...)`).join('\\n\\n') };"
+      },
+      "id": "1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+      "name": "Aggregate_News",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        50,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const news = $node[\"Aggregate_News\"].json.headlines;\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    response_format: { type: \"json_object\" },\n    messages: [\n      { role: \"system\", content: \"Виберіть одну тему. Поверніть JSON: {topic, summary, reason, slug}\" },\n      { role: \"user\", content: \"Новини: \\n\" + news }\n    ]\n  }\n};"
+      },
+      "id": "6g7h8i9j-0k1l-2m3n-4o5p-q6r7s8t9u0v1",
+      "name": "Prepare_Topic_Selection",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {}
+      },
+      "id": "4g5h6i7j-8k9l-0m1n-2o3p-q4r5s6t7u8v9",
+      "name": "Groq_Select_Top_Topic",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        450,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "X1WVNWEaiLm7QaQP",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const selection = JSON.parse($json.choices[0].message.content);\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    response_format: { type: \"json_object\" },\n    temperature: 0.8,\n    messages: [\n      { \n        role: \"system\", \n        content: \"Ти — Тарас Андрусишин. \\n\\nТВІЙ ЗАКОН: \\n1. ОБСЯГ: 1500-2000 слів. \\n2. ЗАБОРОНА: НЕ ПИШИ головний заголовок (# Заголовок) у тілі контенту. Починай одразу з ## TL;DR. \\n3. СТРУКТУРА: ## TL;DR (буліти), ## Глибоке занурення, ## Вплив на автономний бізнес, ## Світові кейси, ## Прогноз 2027. \\n4. ПЕРЕЛЬІНКОВКА: [Solo Founder Model](/blog/solo-founder-model-2026), [Autonomous Developer](/blog/autonomous-developer-2026). \\n5. СТИЛЬ: Провокативний, візіонерський. \\n\\nПОВЕРНИ JSON: {ua: {title, content, excerpt, category, tags}, en: {title, content, excerpt, category, tags}}\"\n      },\n      { \n        role: \"user\", \n        content: \"ТЕМА: '\" + selection.topic + \"'. Слаг: '\" + selection.slug + \"'. Напиши ЕПІЧНИЙ лонгрід.\"\n      }\n    ]\n  }\n};"
+      },
+      "id": "2a3b4c5d-6e7f-8g9h-0i1j-k2l3m4n5o6p7",
+      "name": "Prepare_Write_Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        650,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {}
+      },
+      "id": "ae8ab80d-550b-4bd1-8499-e77b009dc6b7",
+      "name": "Groq_Write_Article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        850,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "X1WVNWEaiLm7QaQP",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const resp = JSON.parse($json.choices[0].message.content);\nconst selectionData = JSON.parse($node[\"Groq_Select_Top_Topic\"].json.choices[0].message.content);\nconst slug = selectionData.slug;\n\nconst now = new Date().toISOString().split('T')[0];\nconst clean = (txt) => txt.replace(/^[ \t]+/gm, '').trim();\nconst createMD = (d) => `--- \\ntitle: \"${d.title}\"\\ndate: \"${now}\"\\nupdated: \"${now}\"\\nexcerpt: \"${d.excerpt}\"\\ncategory: \"${d.category}\"\\ntags: ${JSON.stringify(d.tags)}\\nfeatured: false\\nimage: \"\"\\n---\\n\\n${clean(d.content)}`;\n\nreturn {\n  ua: { path: `content/posts/${slug}.md`, content: createMD(resp.ua) },\n  en: { path: `content/posts/en/${slug}.md`, content: createMD(resp.en) },\n  topic: resp.ua.title\n};"
+      },
+      "id": "c1cdc04e-d1e9-4ec3-8c91-a576c730ca90",
+      "name": "MD_Formatter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "create",
+        "owner": "andrusyshyn-beta",
+        "repository": "taras-blog",
+        "filePath": "={{ $json.ua.path }}",
+        "fileContent": "={{ $json.ua.content }}",
+        "commitMessage": "=n8n: [REACTIVE] {{ $json.topic }}"
+      },
+      "id": "2c492f86-cfd8-4ffc-8361-916178c40f7b",
+      "name": "GitHub_Upload_UA",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1250,
+        200
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "678kGyJjypfkTyGA",
+          "name": "GitHub OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "create",
+        "owner": "andrusyshyn-beta",
+        "repository": "taras-blog",
+        "filePath": "={{ $node['MD_Formatter'].json.en.path }}",
+        "fileContent": "={{ $node['MD_Formatter'].json.en.content }}",
+        "commitMessage": "=n8n: [REACTIVE-EN] {{ $node['MD_Formatter'].json.topic }}"
+      },
+      "id": "78301c01-961c-4fbc-be79-6ec08f800272",
+      "name": "GitHub_Upload_EN",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1450,
+        200
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "678kGyJjypfkTyGA",
+          "name": "GitHub OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "743588235",
+        "text": "🔥 *РЕАКТИВНИЙ ЛОНГРІД ГОТОВИЙ!*\n\n📰 Тема дня: {{ $node['MD_Formatter'].json.topic }}\n✅ UA/EN аналітика вже на GitHub.",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "aa22231f-bf18-4d37-99e7-b6674a7a565e",
+      "name": "Telegram_Notify",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1650,
+        200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "vS2XW3QzXG8pLm7R",
+          "name": "Telegram Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily_Trigger_09_00": {
+      "main": [
+        [
+          { "node": "RSS_TechCrunch_AI", "type": "main", "index": 0 },
+          { "node": "RSS_TheVerge_AI", "type": "main", "index": 0 },
+          { "node": "RSS_HackerNews", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "RSS_TechCrunch_AI": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 0 }]] },
+    "RSS_TheVerge_AI": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 1 }]] },
+    "RSS_HackerNews": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 2 }]] },
+    "Merge_News_Feeds": { "main": [[{ "node": "Aggregate_News", "type": "main", "index": 0 }]] },
+    "Aggregate_News": { "main": [[{ "node": "Prepare_Topic_Selection", "type": "main", "index": 0 }]] },
+    "Prepare_Topic_Selection": { "main": [[{ "node": "Groq_Select_Top_Topic", "type": "main", "index": 0 }]] },
+    "Groq_Select_Top_Topic": { "main": [[{ "node": "Prepare_Write_Payload", "type": "main", "index": 0 }]] },
+    "Prepare_Write_Payload": { "main": [[{ "node": "Groq_Write_Article", "type": "main", "index": 0 }]] },
+    "Groq_Write_Article": { "main": [[{ "node": "MD_Formatter", "type": "main", "index": 0 }]] },
+    "MD_Formatter": { "main": [[{ "node": "GitHub_Upload_UA", "type": "main", "index": 0 }]] },
+    "GitHub_Upload_UA": { "main": [[{ "node": "GitHub_Upload_EN", "type": "main", "index": 0 }]] },
+    "GitHub_Upload_EN": { "main": [[{ "node": "Telegram_Notify", "type": "main", "index": 0 }]] }
+  }
+}
