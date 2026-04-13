@@ -148,8 +148,10 @@ export default function HomePage() {
             </a>
             <a href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
               <div className={styles.stackIcon}>Eleven</div>
-              <h3>ElevenLabs</h3>
-              <p>AI Voice Generation</p>
+              <div className={styles.stackContent}>
+                <h3>ElevenLabs</h3>
+                <p>AI Voice Generation</p>
+              </div>
             </a>
             <a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" className={styles.stackItem}>
               <div className={styles.stackIcon}>HeyGen</div>

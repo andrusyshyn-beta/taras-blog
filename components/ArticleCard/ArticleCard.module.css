@@ -15,7 +15,6 @@
   border-color: var(--accent);
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.3), var(--shadow-accent);
-  color: inherit;
 }
 
 .card:hover .title {
