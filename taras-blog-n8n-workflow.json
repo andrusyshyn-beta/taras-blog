@@ -15,89 +15,59 @@
       "name": "Daily_Trigger_09_00",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
-      "position": [
-        -600,
-        300
-      ]
+      "position": [ -600, 300 ]
     },
     {
-      "parameters": {
-        "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
-      },
+      "parameters": { "url": "https://techcrunch.com/category/artificial-intelligence/feed/" },
       "id": "3a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
       "name": "RSS_TechCrunch_AI",
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1,
-      "position": [
-        -400,
-        150
-      ]
+      "position": [ -400, 150 ]
     },
     {
-      "parameters": {
-        "url": "https://www.theverge.com/rss/index.xml"
-      },
+      "parameters": { "url": "https://www.theverge.com/rss/index.xml" },
       "id": "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
       "name": "RSS_TheVerge_AI",
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1,
-      "position": [
-        -400,
-        300
-      ]
+      "position": [ -400, 300 ]
     },
     {
-      "parameters": {
-        "url": "https://news.ycombinator.com/rss"
-      },
+      "parameters": { "url": "https://news.ycombinator.com/rss" },
       "id": "2b3c4d5e-6f7g-8h9i-0j1k-l2m3n4o5p6q7",
       "name": "RSS_HackerNews",
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1,
-      "position": [
-        -400,
-        450
-      ]
+      "position": [ -400, 450 ]
     },
     {
-      "parameters": {
-        "mode": "combine",
-        "combinationMode": "mergeByPosition"
-      },
+      "parameters": { "mode": "combine", "combinationMode": "mergeByPosition" },
       "id": "m1e2r3g4-e56f-7g8h-9i0j-k1l2m3n4o5p6",
       "name": "Merge_News_Feeds",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
-      "position": [
-        -150,
-        300
-      ]
+      "position": [ -150, 300 ]
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\nconst filtered = items.filter(item => {\n  const text = ((item.json.title || '') + ' ' + (item.json.content || '')).toLowerCase();\n  return text.includes('ai') || text.includes('agent') || text.includes('autonomous') || text.includes('intelligence');\n});\nconst deduped = Array.from(new Set(filtered.map(a => a.json.title)))\n  .map(title => filtered.find(a => a.json.title === title).json);\n\nreturn { headlines: deduped.slice(0, 8).map(i => `[${i.title}] (Snippet: ${(i.contentSnippet || i.content || 'N/A').substring(0, 500)}...)`).join('\\n\\n') };"
+        "jsCode": "const items = $input.all();\nconst nicheKeywords = ['ai agent', 'llm', 'generative ai', 'autonomous system', 'solopreneur', 'solo founder', 'workflow automation', 'openai', 'anthropic', 'claude', 'gpt', 'n8n', 'no-code ai'];\nconst blocklist = ['vehicle', 'truck', 'car ', 'automotive', 'electric vehicle', ' ev ', 'slate auto', 'pickup', 'suv', 'sedan'];\nconst filtered = items.filter(item => {\n  const text = ((item.json.title || '') + ' ' + (item.json.contentSnippet || item.json.content || '')).toLowerCase();\n  const hasNiche = nicheKeywords.some(kw => text.includes(kw));\n  const isBlocked = blocklist.some(bw => text.includes(bw));\n  return hasNiche && !isBlocked;\n});\nconst deduped = Array.from(new Set(filtered.map(a => a.json.title)))\n  .map(title => filtered.find(a => a.json.title === title).json);\n\nreturn { headlines: deduped.slice(0, 5).map(i => `[${i.title}] (News: ${(i.contentSnippet || i.content || 'N/A').substring(0, 400)}...)`).join('\\n\\n') };"
       },
       "id": "1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
       "name": "Aggregate_News",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
-      "position": [
-        50,
-        300
-      ]
+      "position": [ 50, 300 ]
     },
     {
       "parameters": {
-        "jsCode": "const news = $node[\"Aggregate_News\"].json.headlines;\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    response_format: { type: \"json_object\" },\n    messages: [\n      { role: \"system\", content: \"Виберіть одну тему. Поверніть JSON: {topic, summary, reason, slug}\" },\n      { role: \"user\", content: \"Новини: \\n\" + news }\n    ]\n  }\n};"
+        "jsCode": "const news = $node[\"Aggregate_News\"].json.headlines;\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    response_format: { type: \"json_object\" },\n    messages: [\n      { role: \"system\", content: \"Вибери ОДНУ новину про AI-агентів, LLM або автономні системи. ВАЖЛИВО: поле 'slug' має бути унікальним, тільки маленькі латинські літери та дефіси, БЕЗ пробілів та спеціальних символів. Приклад: 'openai-agent-revolution-2026'. Поверни JSON: {slug, title_ua, title_en, reasoning}\" },\n      { role: \"user\", content: \"Новини: \\n\" + news }\n    ]\n  }\n};"
       },
       "id": "6g7h8i9j-0k1l-2m3n-4o5p-q6r7s8t9u0v1",
-      "name": "Prepare_Topic_Selection",
+      "name": "Topic_Selector",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
-      "position": [
-        250,
-        300
-      ]
+      "position": [ 250, 300 ]
     },
     {
       "parameters": {
@@ -111,32 +81,21 @@
         "options": {}
       },
       "id": "4g5h6i7j-8k9l-0m1n-2o3p-q4r5s6t7u8v9",
-      "name": "Groq_Select_Top_Topic",
+      "name": "Groq_Pick_Topic",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        450,
-        300
-      ],
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "X1WVNWEaiLm7QaQP",
-          "name": "Header Auth account"
-        }
-      }
+      "position": [ 450, 300 ],
+      "credentials": { "httpHeaderAuth": { "id": "X1WVNWEaiLm7QaQP", "name": "Header Auth account" } }
     },
     {
       "parameters": {
-        "jsCode": "const selection = JSON.parse($json.choices[0].message.content);\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    response_format: { type: \"json_object\" },\n    temperature: 0.8,\n    messages: [\n      { \n        role: \"system\", \n        content: \"Ти — Тарас Андрусишин. \\n\\nТВІЙ ЗАКОН: \\n1. ОБСЯГ: 1500-2000 слів. \\n2. ЗАБОРОНА: НЕ ПИШИ головний заголовок (# Заголовок) у тілі контенту. Починай одразу з ## TL;DR. \\n3. СТРУКТУРА: ## TL;DR (буліти), ## Глибоке занурення, ## Вплив на автономний бізнес, ## Світові кейси, ## Прогноз 2027. \\n4. ПЕРЕЛЬІНКОВКА: [Solo Founder Model](/blog/solo-founder-model-2026), [Autonomous Developer](/blog/autonomous-developer-2026). \\n5. СТИЛЬ: Провокативний, візіонерський. \\n\\nПОВЕРНИ JSON: {ua: {title, content, excerpt, category, tags}, en: {title, content, excerpt, category, tags}}\"\n      },\n      { \n        role: \"user\", \n        content: \"ТЕМА: '\" + selection.topic + \"'. Слаг: '\" + selection.slug + \"'. Напиши ЕПІЧНИЙ лонгрід.\"\n      }\n    ]\n  }\n};"
+        "jsCode": "const selection = JSON.parse($json.choices[0].message.content);\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    temperature: 0.85,\n    max_tokens: 4096,\n    messages: [\n      { \n        role: \"system\", \n        content: \"Ти — Тарас Андрусишин, засновник автономного бізнесу. Пишеш глибокі аналітичні статті для технічної аудиторії.\\n\\nКРИТИЧНИЕ ПРАВИЛА:\\n- ЗАБОРОНА повторювати абзаци або думки. Кожне речення — нова ідея.\\n- Пиши конкретно: факти, цифри, приклади з ринку.\\n- Використовуй провокативний, впевнений стиль.\\n- Посилання [Solo Founder Model](/blog/solo-founder-model-2026) та [Autonomous Developer](/blog/autonomous-developer-2026) — вставити МАКСИМУМ по 1-2 рази природно в текст.\\n\\nСТРУКТУРА:\\n## TL;DR\\n(3-5 конкретних тез одним реченням кожна)\\n\\n## Що насправді відбувається\\n(Аналіз події/тренду: хто, що, чому це важливо)\\n\\n## Чому це змінює правила гри\\n(Вплив на Solo Founders та автономний бізнес)\\n\\n## Що це означає для тебе\\n(Практичні дії для читача)\\n\\n## Вердикт 2026\\n(Твоя тверда позиція + заклик до Telegram [Лабораторія Автономії](https://t.me/lab_of_autonomy))\\n\\nФормат: Чистий Markdown.\"\n      },\n      { \n        role: \"user\", \n        content: \"Напиши глибокий аналіз на тему: '\" + selection.title_ua + \"'. Контекст новини: \" + selection.reasoning\n      }\n    ]\n  }\n};"
       },
       "id": "2a3b4c5d-6e7f-8g9h-0i1j-k2l3m4n5o6p7",
-      "name": "Prepare_Write_Payload",
+      "name": "Prepare_UA_Write",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
-      "position": [
-        650,
-        300
-      ]
+      "position": [ 650, 300 ]
     },
     {
       "parameters": {
@@ -150,32 +109,49 @@
         "options": {}
       },
       "id": "ae8ab80d-550b-4bd1-8499-e77b009dc6b7",
-      "name": "Groq_Write_Article",
+      "name": "Groq_Write_UA",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [
-        850,
-        300
-      ],
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "X1WVNWEaiLm7QaQP",
-          "name": "Header Auth account"
-        }
-      }
+      "position": [ 850, 300 ],
+      "credentials": { "httpHeaderAuth": { "id": "X1WVNWEaiLm7QaQP", "name": "Header Auth account" } }
     },
     {
       "parameters": {
-        "jsCode": "const resp = JSON.parse($json.choices[0].message.content);\nconst selectionData = JSON.parse($node[\"Groq_Select_Top_Topic\"].json.choices[0].message.content);\nconst slug = selectionData.slug;\n\nconst now = new Date().toISOString().split('T')[0];\nconst clean = (txt) => txt.replace(/^[ \t]+/gm, '').trim();\nconst createMD = (d) => `--- \\ntitle: \"${d.title}\"\\ndate: \"${now}\"\\nupdated: \"${now}\"\\nexcerpt: \"${d.excerpt}\"\\ncategory: \"${d.category}\"\\ntags: ${JSON.stringify(d.tags)}\\nfeatured: false\\nimage: \"\"\\n---\\n\\n${clean(d.content)}`;\n\nreturn {\n  ua: { path: `content/posts/${slug}.md`, content: createMD(resp.ua) },\n  en: { path: `content/posts/en/${slug}.md`, content: createMD(resp.en) },\n  topic: resp.ua.title\n};"
+        "jsCode": "const uaContent = $json.choices[0].message.content;\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    messages: [\n      { role: \"system\", content: \"Translate this professional technical article to English. Keep the Markdown formatting, URLs, and tone. Preserve links like [Solo Founder Model](/blog/solo-founder-model-2026).\" },\n      { role: \"user\", content: uaContent }\n    ]\n  }\n};"
       },
-      "id": "c1cdc04e-d1e9-4ec3-8c91-a576c730ca90",
-      "name": "MD_Formatter",
+      "id": "t1r2a3n4-s5l6-a7t8-e9n0-g1l2i3s4h5p6",
+      "name": "Prepare_EN_Translation",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
-      "position": [
-        1050,
-        300
-      ]
+      "position": [ 1050, 300 ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {}
+      },
+      "id": "e1n2t3r4-a5n6-s7l8-a9t0-e1n2g3l4i5s6",
+      "name": "Groq_Translate_EN",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [ 1250, 300 ],
+      "credentials": { "httpHeaderAuth": { "id": "X1WVNWEaiLm7QaQP", "name": "Header Auth account" } }
+    },
+    {
+      "parameters": {
+        "jsCode": "const uaContent = $node[\"Groq_Write_UA\"].json.choices[0].message.content;\nconst enContent = $node[\"Groq_Translate_EN\"].json.choices[0].message.content;\nconst selection = JSON.parse($node[\"Groq_Pick_Topic\"].json.choices[0].message.content);\n\n// Bulletproof slug sanitizer — strips spaces, $, and any special chars\nconst rawSlug = (selection.slug || 'ai-post').toLowerCase();\nconst slug = rawSlug.replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/^-|-$/g, '');\n\nconst now = new Date().toISOString().split('T')[0];\nconst clean = (txt) => txt.replace(/^[ \\t]+/gm, '').trim();\n\nconst createMD = (title, content, excerpt) => `--- \\ntitle: \"${title}\"\\ndate: \"${now}\"\\nupdated: \"${now}\"\\nexcerpt: \"${excerpt}\"\\ncategory: \"Autonomous Business\"\\ntags: [\"AI-Agents\", \"Automation\", \"Vision\"]\\nfeatured: false\\nimage: \"\"\\n---\\n\\n${clean(content)}`;\n\nreturn {\n  ua: { path: `content/posts/${slug}.md`, content: createMD(selection.title_ua, uaContent, \"Аналіз автономних систем та агентної революції.\") },\n  en: { path: `content/posts/en/${slug}.md`, content: createMD(selection.title_en, enContent, \"Analysis of autonomous systems and the agentic revolution.\") },\n  topic: selection.title_ua\n};"
+      },
+      "id": "c1cdc04e-d1e9-4ec3-8c91-a576c730ca90",
+      "name": "MDX_Finalizer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [ 1450, 300 ]
     },
     {
       "parameters": {
@@ -186,22 +162,14 @@
         "repository": "taras-blog",
         "filePath": "={{ $json.ua.path }}",
         "fileContent": "={{ $json.ua.content }}",
-        "commitMessage": "=n8n: [REACTIVE] {{ $json.topic }}"
+        "commitMessage": "=n8n: [GOLD-UA] {{ $json.topic }}"
       },
       "id": "2c492f86-cfd8-4ffc-8361-916178c40f7b",
       "name": "GitHub_Upload_UA",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
-      "position": [
-        1250,
-        200
-      ],
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "678kGyJjypfkTyGA",
-          "name": "GitHub OAuth2 API"
-        }
-      }
+      "position": [ 1650, 200 ],
+      "credentials": { "githubOAuth2Api": { "id": "678kGyJjypfkTyGA", "name": "GitHub OAuth2 API" } }
     },
     {
       "parameters": {
@@ -210,70 +178,32 @@
         "operation": "create",
         "owner": "andrusyshyn-beta",
         "repository": "taras-blog",
-        "filePath": "={{ $node['MD_Formatter'].json.en.path }}",
-        "fileContent": "={{ $node['MD_Formatter'].json.en.content }}",
-        "commitMessage": "=n8n: [REACTIVE-EN] {{ $node['MD_Formatter'].json.topic }}"
+        "filePath": "={{ $node[\"MDX_Finalizer\"].json.en.path }}",
+        "fileContent": "={{ $node[\"MDX_Finalizer\"].json.en.content }}",
+        "commitMessage": "=n8n: [GOLD-EN] {{ $node[\"MDX_Finalizer\"].json.topic }}"
       },
       "id": "78301c01-961c-4fbc-be79-6ec08f800272",
       "name": "GitHub_Upload_EN",
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
-      "position": [
-        1450,
-        200
-      ],
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "678kGyJjypfkTyGA",
-          "name": "GitHub OAuth2 API"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "chatId": "743588235",
-        "text": "🔥 *РЕАКТИВНИЙ ЛОНГРІД ГОТОВИЙ!*\n\n📰 Тема дня: {{ $node['MD_Formatter'].json.topic }}\n✅ UA/EN аналітика вже на GitHub.",
-        "additionalFields": {
-          "parse_mode": "Markdown"
-        }
-      },
-      "id": "aa22231f-bf18-4d37-99e7-b6674a7a565e",
-      "name": "Telegram_Notify",
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        1650,
-        200
-      ],
-      "credentials": {
-        "telegramApi": {
-          "id": "vS2XW3QzXG8pLm7R",
-          "name": "Telegram Bot"
-        }
-      }
+      "position": [ 1850, 200 ],
+      "credentials": { "githubOAuth2Api": { "id": "678kGyJjypfkTyGA", "name": "GitHub OAuth2 API" } }
     }
   ],
   "connections": {
-    "Daily_Trigger_09_00": {
-      "main": [
-        [
-          { "node": "RSS_TechCrunch_AI", "type": "main", "index": 0 },
-          { "node": "RSS_TheVerge_AI", "type": "main", "index": 0 },
-          { "node": "RSS_HackerNews", "type": "main", "index": 0 }
-        ]
-      ]
-    },
-    "RSS_TechCrunch_AI": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 0 }]] },
-    "RSS_TheVerge_AI": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 1 }]] },
-    "RSS_HackerNews": { "main": [[{ "node": "Merge_News_Feeds", "type": "main", "index": 2 }]] },
-    "Merge_News_Feeds": { "main": [[{ "node": "Aggregate_News", "type": "main", "index": 0 }]] },
-    "Aggregate_News": { "main": [[{ "node": "Prepare_Topic_Selection", "type": "main", "index": 0 }]] },
-    "Prepare_Topic_Selection": { "main": [[{ "node": "Groq_Select_Top_Topic", "type": "main", "index": 0 }]] },
-    "Groq_Select_Top_Topic": { "main": [[{ "node": "Prepare_Write_Payload", "type": "main", "index": 0 }]] },
-    "Prepare_Write_Payload": { "main": [[{ "node": "Groq_Write_Article", "type": "main", "index": 0 }]] },
-    "Groq_Write_Article": { "main": [[{ "node": "MD_Formatter", "type": "main", "index": 0 }]] },
-    "MD_Formatter": { "main": [[{ "node": "GitHub_Upload_UA", "type": "main", "index": 0 }]] },
-    "GitHub_Upload_UA": { "main": [[{ "node": "GitHub_Upload_EN", "type": "main", "index": 0 }]] },
-    "GitHub_Upload_EN": { "main": [[{ "node": "Telegram_Notify", "type": "main", "index": 0 }]] }
+    "Daily_Trigger_09_00": { "main": [ [ { "node": "RSS_TechCrunch_AI", "type": "main", "index": 0 }, { "node": "RSS_TheVerge_AI", "type": "main", "index": 0 }, { "node": "RSS_HackerNews", "type": "main", "index": 0 } ] ] },
+    "RSS_TechCrunch_AI": { "main": [ [ { "node": "Merge_News_Feeds", "type": "main", "index": 0 } ] ] },
+    "RSS_TheVerge_AI": { "main": [ [ { "node": "Merge_News_Feeds", "type": "main", "index": 1 } ] ] },
+    "RSS_HackerNews": { "main": [ [ { "node": "Merge_News_Feeds", "type": "main", "index": 2 } ] ] },
+    "Merge_News_Feeds": { "main": [ [ { "node": "Aggregate_News", "type": "main", "index": 0 } ] ] },
+    "Aggregate_News": { "main": [ [ { "node": "Topic_Selector", "type": "main", "index": 0 } ] ] },
+    "Topic_Selector": { "main": [ [ { "node": "Groq_Pick_Topic", "type": "main", "index": 0 } ] ] },
+    "Groq_Pick_Topic": { "main": [ [ { "node": "Prepare_UA_Write", "type": "main", "index": 0 } ] ] },
+    "Prepare_UA_Write": { "main": [ [ { "node": "Groq_Write_UA", "type": "main", "index": 0 } ] ] },
+    "Groq_Write_UA": { "main": [ [ { "node": "Prepare_EN_Translation", "type": "main", "index": 0 } ] ] },
+    "Prepare_EN_Translation": { "main": [ [ { "node": "Groq_Translate_EN", "type": "main", "index": 0 } ] ] },
+    "Groq_Translate_EN": { "main": [ [ { "node": "MDX_Finalizer", "type": "main", "index": 0 } ] ] },
+    "MDX_Finalizer": { "main": [ [ { "node": "GitHub_Upload_UA", "type": "main", "index": 0 } ] ] },
+    "GitHub_Upload_UA": { "main": [ [ { "node": "GitHub_Upload_EN", "type": "main", "index": 0 } ] ] }
   }
 }
