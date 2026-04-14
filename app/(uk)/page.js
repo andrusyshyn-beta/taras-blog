@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts } from '@/lib/posts';
 import ArticleCard from '@/components/ArticleCard/ArticleCard';
 import NewsletterForm from '@/components/NewsletterForm/NewsletterForm';
@@ -178,7 +179,14 @@ export default function HomePage() {
             <div className={styles.aboutAvatar}>
               <div className={styles.avatarRing}>
                 <div className={styles.avatarInner}>
-                  <img src="/images/taras-photo.jpg" alt="Тарас Андрусишин" className={styles.avatarImage} />
+                  <Image 
+                    src="/images/taras-photo.jpg" 
+                    alt="Тарас Андрусишин" 
+                    className={styles.avatarImage} 
+                    width={114} 
+                    height={114}
+                    quality={90}
+                  />
                 </div>
               </div>
             </div>

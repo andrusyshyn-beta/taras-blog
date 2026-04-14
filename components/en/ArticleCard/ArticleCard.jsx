@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './ArticleCard.module.css';
 
 function formatDate(dateStr) {
@@ -19,7 +20,14 @@ export default function ArticleCard({ post, featured = false }) {
       {/* Image */}
       {image && (
         <div className={styles.imageWrap}>
-          <img src={image} alt={title} className={styles.image} loading="lazy" />
+          <Image 
+            src={image} 
+            alt={title} 
+            className={styles.image} 
+            width={400} 
+            height={225}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
       )}
 
