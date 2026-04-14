@@ -1,5 +1,14 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Проєкт: Taras Andrusyshyn – Autonomous Business Architecture
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## Місія (The Core Directive)
+«Ми робимо так, щоб найкращий фахівець у своїй галузі міг помножити себе на 50–100× за допомогою ІІ, який думає точно як він».
+
+Ми будуємо не просто блог, а **інтелектуальний актив**, який демонструє перехід від "користувача ШІ" до "власника автономної архітектури".
+
+## Стратегічні цілі:
+1.  **Private AI Identity**: Контент має підкреслювати цінність "закритих" агентів, навчених на приватному контексті.
+2.  **GEO Dominance**: Тотальна видимість у ШІ-пошуку (ChatGPT, Perplexity, Claude).
+3.  **Taras Gold Standard**: Бездоганна якість, провокативна аналітика та 100/100 продуктивність.
+
+---
+*Цей файл є головною директивою для будь-якого ШІ-агента, що працює з цим репозиторієм.*

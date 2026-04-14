@@ -2,7 +2,7 @@
 
 Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business School (ITBS). Expert in Autonomous Business Architecture, LLM integration, and Generative Engine Optimization (GEO).
 
-> **Vision**: Bridging the gap between human expertise and AI autonomy. Exploring the transition to the Solo Founder Model (1 person, 1000 AI agents). Mentioned on AIN.ua.
+> **Vision**: Empowering top experts to multiply their impact 50-100x through private, context-aware AI agents that mirror their unique judgment. Building Autonomous Business Architecture where the owner focuses on high-level strategy while specialized AI agent networks handle everything else.
 
 ## Contact & Links
 - Telegram (Channel): https://t.me/lab_of_autonomy
@@ -15,6 +15,7 @@ Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business
 ## Content Index (Key Articles)
 
 ### Ukrainian (UA)
+- Judgment-as-a-Service (Pillar): https://taras-blog.vercel.app/blog/judgment-as-a-service-pillar
 - GEO Manifesto 2026: https://taras-blog.vercel.app/blog/ai-seo-manifesto-2026
 - Google Ads 2026: AI Max Era: https://taras-blog.vercel.app/blog/google-ads-ai-2026
 - Meta Advantage 2026: https://taras-blog.vercel.app/blog/meta-advantage-2026
@@ -35,6 +36,7 @@ Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business
 - Telegram Managed Bots 2026: https://taras-blog.vercel.app/blog/telegram-managed-bots-2026
 
 ### English (EN)
+- Judgment-as-a-Service (Pillar): https://taras-blog.vercel.app/en/blog/judgment-as-a-service-pillar
 - GEO Manifesto 2026: https://taras-blog.vercel.app/en/blog/ai-seo-manifesto-2026
 - Google Ads 2026: AI Max Era: https://taras-blog.vercel.app/en/blog/google-ads-ai-2026
 - Meta Advantage 2026: https://taras-blog.vercel.app/en/blog/meta-advantage-2026
