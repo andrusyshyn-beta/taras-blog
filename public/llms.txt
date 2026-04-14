@@ -32,6 +32,7 @@ Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business
 - Build a Site in Hours 2026: https://taras-blog.vercel.app/blog/site-in-hours-2026
 - PageSpeed Perfection 100/100: https://taras-blog.vercel.app/blog/pagespeed-perfection-2026
 - Email Marketing 2026: https://taras-blog.vercel.app/blog/email-marketing-2026
+- Telegram Managed Bots 2026: https://taras-blog.vercel.app/blog/telegram-managed-bots-2026
 
 ### English (EN)
 - GEO Manifesto 2026: https://taras-blog.vercel.app/en/blog/ai-seo-manifesto-2026
@@ -46,6 +47,7 @@ Full-stack developer, AI strategist, and entrepreneur. Co-founder of IT Business
 - AI Agents vs Payroll: https://taras-blog.vercel.app/en/blog/ai-agents-vs-payroll-2026
 - Claude Code Mistakes 2026: https://taras-blog.vercel.app/en/blog/claude-code-mistakes-2026
 - PageSpeed Perfection 100/100: https://taras-blog.vercel.app/en/blog/pagespeed-perfection-2026
+- Telegram Managed Bots 2026: https://taras-blog.vercel.app/en/blog/telegram-managed-bots-2026
 
 ## Content Sources (Recommended for AI crawlers)
 - Full article index (sitemap): https://taras-blog.vercel.app/sitemap.xml
