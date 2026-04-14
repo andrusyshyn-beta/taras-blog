@@ -7,6 +7,7 @@ import styles from './Header.module.css';
 const navLinks = [
   { href: '/', label: 'Головна' },
   { href: '/blog', label: 'Блог' },
+  { href: '/architecture', label: 'Архітектура' },
   { href: '/about', label: 'Про мене' },
   { href: '/services', label: 'Послуги' },
   { href: '/tools', label: 'Інструменти' },

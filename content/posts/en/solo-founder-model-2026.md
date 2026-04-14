@@ -37,7 +37,9 @@ The best *fit* for the solo founder model is someone who has spent 5-10 years wi
 ## 2. The Tool Stack: Your Virtual Team
 
 A solo founder doesn't have a budget for salaries, but does have a budget for subscriptions.
-- **CEO & CTO:** [Claude AI](/en/tools) — strategy, architecture, and coding.
+- **CEO & CTO:** [Claude AI](/en/tools) — strategy, architecture, and coding. 
+
+> **Important:** To truly scale, a CEO must implement [Judgment-as-a-Service (JaaS)](/en/blog/judgment-as-a-service-pillar) — a system where your professional principles are digitized into a private agent that makes decisions for you 24/7.
 - **Marketing Director:** [Jasper AI](/en/tools) — creating sales copy, landing pages, and cold outreach.
 - **Operations Manager:** **Make** — automating routine (invoicing, notifications, data collection).
 - **Analyst:** [Perplexity Pro](/en/tools) — quick search for market trends and idea validation.

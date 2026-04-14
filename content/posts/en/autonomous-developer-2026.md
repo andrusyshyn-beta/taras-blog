@@ -79,7 +79,9 @@ You can build such code in a day and start refining it based on feedback from re
 An AI agent sells the finished result, while a regular SaaS sells a tool for getting the result.
 
 In classic micro-SaaS, you give the client access ("here's the platform, log in and generate yourself").
-In the **AI Agent-as-a-Service** model, you take on the work: "We automatically generate and publish your property descriptions weekly, just give us access." The subjective value of "free time" that the client buys is much higher, so they pay more willingly and more generously.
+In the **AI Agent-as-a-Service** model, you take on the work: "We automatically generate and publish your property descriptions weekly, just give us access." 
+
+> **Evolution:** The ultimate form of this service is [Judgment-as-a-Service (JaaS)](/en/blog/judgment-as-a-service-pillar) — where you sell not just "bot labor," but a digitized expert decision integrated directly into the client's business logic.
 
 *(If you have expertise in your niche but don't know where to start with AI implementation — write to me on Telegram [@tsand07](https://t.me/tsand07), I'll help find the right direction).*
 

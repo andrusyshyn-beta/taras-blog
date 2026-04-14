@@ -24,6 +24,8 @@ Until 2024, we fought for positions in the "Google Top 10." In 2026, the user of
 
 If your website is not in the list of sources from which the AI compiles its answer, you practically don't exist for 70% of the audience. Classic SEO is still needed for indexing, but now it's just an entry ticket to the game called **GEO — Generative Engine Optimization**. Notably, this also applies to advertising, which is now being [integrated directly into AI-generated answers](/en/blog/google-ads-ai-2026).
 
+> **Expert Tip:** To get AI models to cite you, you must provide unique **Information Gain**. The best source for this is [Judgment-as-a-Service (JaaS)](/en/blog/judgment-as-a-service-pillar) — digitized cases and decisions that exist only within your private context.
+
 ---
 
 ## How to Prepare Your Site for AI Search (Step-by-Step Guide)?
