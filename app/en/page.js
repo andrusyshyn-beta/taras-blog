@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
             <div className={styles.grid3}>
               {featuredPosts.map((post) => (
-                <ArticleCard key={post.slug} post={post} featured />
+                <ArticleCard key={post.slug} post={post} featured priority={true} />
               ))}
             </div>
           </div>

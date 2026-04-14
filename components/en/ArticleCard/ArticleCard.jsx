@@ -12,7 +12,7 @@ function formatDate(dateStr) {
   });
 }
 
-export default function ArticleCard({ post, featured = false }) {
+export default function ArticleCard({ post, featured = false, priority = false }) {
   const { slug, title, excerpt, date, category, readingTime, image } = post;
 
   return (
@@ -27,6 +27,7 @@ export default function ArticleCard({ post, featured = false }) {
             width={400} 
             height={225}
             sizes="(max-width: 768px) 100vw, 33vw"
+            priority={priority}
           />
         </div>
       )}
