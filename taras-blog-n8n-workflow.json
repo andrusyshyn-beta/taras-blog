@@ -6,7 +6,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 9 * * *"
+              "expression": "0 0 9 * * *"
             }
           ]
         }
@@ -89,7 +89,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const selection = JSON.parse($node[\"Groq_Pick_Topic\"].json.choices[0].message.content);\nconst keyFacts = selection.key_facts || selection.reasoning || '';\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    temperature: 0.85,\n    max_tokens: 4096,\n    messages: [\n      { \n        role: \"system\", \n        content: \"Ти — Тарас Андрусишин, засновник автономного бізнесу. Пишеш аналітику про масштабування експертів через ШІ.\\n\\nГОЛОВНА МІСІЯ: Ми робимо так, щоб фахівець міг помножити себе на 100х за допомогою приватної ІІ-архітектури.\\n\\nЖОРСТКІ ПРАВИЛА:\\n1. ПРІОРИТЕТ: аналізуй новину через призму 'Judgment-as-a-Service'. Як це допомагає оцифрувати досвід?\\n2. ОБОВ'ЯЗКОВО: використовуй конкретні факти з новини (цифри, назви).\\n3. ПОСИЛАННЯ (по 1 разу): [Judgment-as-a-Service (JaaS)](/blog/judgment-as-a-service-pillar), [Solo Founder Model](/blog/solo-founder-model-2026), [Autonomous Developer](/blog/autonomous-developer-2026).\\n4. Telegram [Лабораторія Автономії](https://t.me/lab_of_autonomy) — в кінці.\\n\\nСТРУКТУРА:\\n## TL;DR (3-5 конкретних фактів)\\n## Що сталося насправді (аналіз)\\n## Як це множить фахівця на 100х (стратегія JaaS)\\n## Що робити вже сьогодні (3-5 кроків)\\n## Мій вердикт + заклик до Telegram\\n\\nФормат: Чистий Markdown.\"\n      },\n      { \n        role: \"user\", \n        content: \"Тема: '\" + selection.title_ua + \"'\\nКлючові факти з новини: \" + keyFacts + \"\\n\\nНапиши аналітичну статтю, використовуючи ці конкретні факти як основу.\"\n      }\n    ]\n  }\n};"
+        "jsCode": "const selection = JSON.parse($node[\"Groq_Pick_Topic\"].json.choices[0].message.content);\nconst keyFacts = selection.key_facts || selection.reasoning || '';\nreturn {\n  payload: {\n    model: \"llama-3.3-70b-versatile\",\n    temperature: 0.3,\n    max_tokens: 4096,\n    messages: [\n      { \n        role: \"system\", \n        content: \"Ти — Тарас Андрусишин, засновник автономного бізнесу. Пишеш аналітику про масштабування експертів через ШІ.\\n\\nГОЛОВНА МІСІЯ: Ми робимо так, щоб фахівець міг помножити себе на 100х за допомогою приватної ІІ-архітектури.\\n\\nЖОРСТКІ ПРАВИЛА (ВАЖЛИВО!):\\n1. ПРІОРИТЕТ: аналізуй новину через призму 'Judgment-as-a-Service'. Як це допомагає оцифрувати досвід?\\n2. ОБОВ'ЯЗКОВО: використовуй конкретні факти з новини. КАТЕГОРИЧНО заборонено вигадувати нові факти, змішувати компанії (напр. OpenAI і Meta) або додумувати цифри. Якщо інформації мало — роби логічний аналіз, але не бреши.\\n3. ПОСИЛАННЯ (по 1 разу): [Judgment-as-a-Service (JaaS)](/blog/judgment-as-a-service-pillar), [Solo Founder Model](/blog/solo-founder-model-2026), [Autonomous Developer](/blog/autonomous-developer-2026).\\n\\nСТРУКТУРА:\\n## TL;DR (3-5 конкретних фактів)\\n## Що сталося насправді (аналіз)\\n## Як це множить фахівця на 100х (стратегія JaaS)\\n## Що робити вже сьогодні (3-5 кроків)\\n## Висновок\\n\\nФормат: Чистий Markdown.\"\n      },\n      { \n        role: \"user\", \n        content: \"Тема: '\" + selection.title_ua + \"'\\nКлючові факти з новини: \" + keyFacts + \"\\n\\nНапиши аналітичну статтю, спираючись ВИКЛЮЧНО на ці факти (не вигадуй).\"\n      }\n    ]\n  }\n};"
       },
       "id": "2a3b4c5d-6e7f-8g9h-0i1j-k2l3m4n5o6p7",
       "name": "Prepare_UA_Write",

@@ -7,8 +7,8 @@ import styles from './page.module.css';
 
 export default function HomePage() {
   const allPosts = getAllPosts();
-  const featuredPosts = allPosts.filter((p) => p.featured).slice(0, 3);
-  const recentPosts = allPosts.slice(0, 6);
+  const featuredPosts = allPosts.filter((p) => p.featured).slice(0, 6);
+  const recentPosts = allPosts.filter((p) => !p.featured).slice(0, 6);
 
   return (
     <>
