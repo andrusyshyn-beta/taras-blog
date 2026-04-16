@@ -15,22 +15,23 @@ function formatDate(dateStr) {
 
 export default function ArticleCard({ post, featured = false, priority = false }) {
   const { slug, title, excerpt, date, category, readingTime, image } = post;
-  const finalImage = image || "/images/default-og.png";
 
   return (
     <Link href={`/blog/${slug}`} className={`card ${styles.card} ${featured ? styles.featured : ''}`}>
       {/* Image */}
-      <div className={styles.imageWrap}>
-        <Image 
-          src={finalImage} 
-          alt={title} 
-          className={styles.image} 
-          width={400} 
-          height={225}
-          sizes="(max-width: 768px) 100vw, 33vw"
-          priority={priority}
-        />
-      </div>
+      {image && (
+        <div className={styles.imageWrap}>
+          <Image 
+            src={image} 
+            alt={title} 
+            className={styles.image} 
+            width={400} 
+            height={225}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            priority={priority}
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className={styles.content}>
